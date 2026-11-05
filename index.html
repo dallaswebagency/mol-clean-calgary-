@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0b0b0b; --navy:#303030; --navy-deep:#1c1c1c; --sky:#40e0d0; --teal-ink:#0e8f84; --sun:#40e0d0; --charcoal:#303030;
+  --ink:#303030; --navy:#303030; --navy-deep:#1c1c1c; --sky:#40e0d0; --teal-ink:#0e8f84; --sun:#40e0d0; --charcoal:#303030;
   --tint:#f3f4f4; --paper:#fafafa; --text:#1a1a1a; --muted:#555b5f; --line:rgba(0,0,0,.12);
   --r:22px; --display:'Barlow Condensed','Arial Narrow',system-ui,sans-serif; --body:'Figtree',system-ui,sans-serif;
 }
@@ -421,6 +421,75 @@ footer a:hover{color:#fff}
   .hero .wrap{padding-top:44px;padding-bottom:50px;gap:34px}
   .hero h1{font-size:44px}
   .hero .acts .btn{flex:1 1 100%}
+}
+
+/* v4: light theme, less black */
+.top{background:#e6faf8;color:var(--ink)}
+.top .mid{color:var(--teal-ink)}
+.hdr{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 6px 24px -18px rgba(0,0,0,.25)}
+.logo{background:transparent;padding:0;border-radius:0}
+.logo img{height:46px}
+.menu>li>a{color:var(--ink)}
+.menu>li>a:hover{color:var(--teal-ink)}
+.burger span{background:var(--ink)}
+.hdr-cta .b-ghost{border-color:var(--line);color:var(--ink)}
+.hdr-cta .b-ghost:hover{background:var(--tint);color:var(--ink)}
+.hero{background:linear-gradient(135deg,#ffffff 0%,#f2fcfb 55%,#dcf8f5 100%);color:var(--ink)}
+.hero::before{background:radial-gradient(closest-side,rgba(64,224,208,.35),transparent 70%)}
+.hero h1{color:var(--ink)}
+.hero h1 em{color:var(--teal-ink)}
+.hero p{color:var(--muted)}
+.hero .b-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.hero .b-ghost:hover{background:var(--ink);color:#fff}
+.pill{border:1px solid var(--line);box-shadow:0 10px 24px -18px rgba(0,0,0,.35)}
+.feats{border-top:1px solid var(--line)}
+.ft1+.ft1,.ft1:nth-child(n+3){border-color:var(--line)!important}
+.ft1 b{color:var(--ink)}
+.ft1 small{color:var(--muted)}
+.ft1 .fi{background:#fff;border:1px solid var(--line)}
+.ticker{border-bottom:0}
+.offer{background:#e6faf8;border:1.5px solid var(--sky);color:var(--text)}
+.offer h3{color:var(--ink)}
+.offer p{color:var(--muted)}
+.offer .mini input{border-color:var(--line)}
+.offer::after{color:rgba(64,224,208,.25)}
+.vt-nav{background:#e6faf8}
+.vtab{color:var(--ink);border-color:rgba(48,48,48,.12);background:#fff}
+.vtab small{color:var(--muted)}
+.vtab.on{background:var(--sky);border-color:var(--sky)}
+.vp a:hover{background:var(--sky);color:var(--ink)}
+.vp a:hover svg{color:var(--ink)}
+.nc{border-top-color:var(--sky)}
+.nc .num{-webkit-text-stroke-color:var(--teal-ink)}
+.score{background:var(--sky);color:var(--ink)}
+.score .g{color:var(--ink)!important}
+.score small{color:var(--ink);opacity:.75}
+.score .row{border-color:rgba(0,0,0,.12)}
+.score .stars{color:#303030!important}
+.score .b-sun{background:#fff;color:var(--ink)}
+.slide .q{color:rgba(64,224,208,.35)}
+.av{background:var(--sky);color:var(--ink)}
+.why .ck{background:var(--sky);color:var(--ink)}
+.dots button.on{background:var(--teal-ink)}
+.bt{background:#e6faf8}
+.bt::after{background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.6))}
+.vid{background:#e6faf8}
+.sc .sq{background:var(--sky);color:var(--ink)}
+footer{background:#f4fbfa;color:var(--muted);border-top:4px solid var(--sky)}
+footer h5{color:var(--teal-ink)}
+footer a:hover{color:var(--teal-ink)}
+.ft .about-t b{color:var(--ink)}
+.ft .b-ghost{border-color:var(--ink);color:var(--ink)}
+.ci svg{color:var(--teal-ink)}
+.socials a{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.fb{border-color:var(--line)}
+.fb a{color:var(--teal-ink)}
+.mbar{background:#fff!important;border-top:1px solid var(--line)}
+.mbar a{color:var(--ink)!important}
+.mbar a:first-child{background:var(--sky)!important}
+@media (max-width:1080px){
+  .menu.open{background:#fff;border-bottom:1px solid var(--line)}
+  .menu.open .dd a{color:var(--muted)}
 }
 
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
