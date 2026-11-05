@@ -492,6 +492,37 @@ footer a:hover{color:var(--teal-ink)}
   .menu.open .dd a{color:var(--muted)}
 }
 
+.ft1 .fi{width:48px;height:48px;border-radius:14px;background:var(--sky)!important;border:0!important;display:grid;place-items:center;padding:0!important;color:var(--ink);transition:transform .25s}
+.ft1:hover .fi{transform:rotate(-6deg) scale(1.05)}
+.ft1 .fi svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.nc .ico{width:60px;height:60px;border-radius:18px;background:#e6faf8;border:1.5px solid var(--sky);display:grid;place-items:center;color:var(--teal-ink);transition:.25s}
+.nc .ico svg{width:28px;height:28px}
+.nc:hover .ico{background:var(--sky);color:var(--ink);transform:translateY(-3px)}
+@media (max-width:620px){.nc .ico{width:50px;height:50px;border-radius:14px}.nc .ico svg{width:24px;height:24px}}
+
+.rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.rsum{display:flex;gap:12px;flex-wrap:wrap}
+.rs{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 18px}
+.rs>b{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--teal-ink)}
+.rs small{display:block;font-size:12.5px;color:var(--muted)}
+.rrows{display:grid;gap:18px;margin-top:40px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.rrow{overflow:hidden}
+.rtrack{display:flex;gap:18px;width:max-content;animation:slide 48s linear infinite}
+.rev2 .rtrack{animation-direction:reverse;animation-duration:54s}
+.rrow:hover .rtrack{animation-play-state:paused}
+.rc{width:380px;flex:none;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 26px;position:relative;transition:border-color .2s}
+.rc:hover{border-color:var(--sky)}
+.rc::after{content:"\201C";position:absolute;right:20px;top:4px;font-family:Georgia,serif;font-size:90px;line-height:1;color:rgba(64,224,208,.3)}
+.rc .stars{font-size:17px}
+.rc h4{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:24px;line-height:1;color:var(--ink);margin:8px 0}
+.rc p{font-size:15px;color:var(--text);line-height:1.55}
+.rc .who{margin-top:16px}
+.rc .av{width:40px;height:40px;font-size:18px}
+#reviews .center{margin-top:36px}
+@media (max-width:620px){.rc{width:290px;padding:20px}.rc p{font-size:14px}.rs>b{font-size:32px}.rrows{gap:12px}.rtrack{gap:12px}}
+@media (prefers-reduced-motion:reduce){.rtrack{animation:none}}
+
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.track{animation:none}}
@@ -612,10 +643,10 @@ footer a:hover{color:var(--teal-ink)}
     </div>
   </div>
   <div class="wrap feats">
-    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412665358423.webp" alt=""></span><div><b>Professional Team</b><small>Our trained, insured cleaners ensure professional, trusted service and impeccable results.</small></div></div>
-    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412666262629.webp" alt=""></span><div><b>Transparent Pricing</b><small>Affordable, upfront rates with no hidden costs. Quality cleaning at the right price.</small></div></div>
-    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412665876065.webp" alt=""></span><div><b>On Time Service</b><small>Reliable, punctual service that respects your schedule and exceeds expectations.</small></div></div>
-    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412666564311.webp" alt=""></span><div><b>Eco Friendly</b><small>We use non-toxic, eco-friendly products for a safe, healthy, and sparkling environment.</small></div></div>
+    <div class="ft1"><span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><div><b>Professional Team</b><small>Our trained, insured cleaners ensure professional, trusted service and impeccable results.</small></div></div>
+    <div class="ft1"><span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><b>Transparent Pricing</b><small>Affordable, upfront rates with no hidden costs. Quality cleaning at the right price.</small></div></div>
+    <div class="ft1"><span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6M12 2v3"/></svg></span><div><b>On Time Service</b><small>Reliable, punctual service that respects your schedule and exceeds expectations.</small></div></div>
+    <div class="ft1"><span class="fi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.2-6.1 2.4-.5 4.9-2 5.8-3.9"/></svg></span><div><b>Eco Friendly</b><small>We use non-toxic, eco-friendly products for a safe, healthy, and sparkling environment.</small></div></div>
   </div>
 </section>
 
@@ -713,40 +744,26 @@ footer a:hover{color:var(--teal-ink)}
       <div><span class="kick">How It Works</span><h2 class="h2">From Booking to <em>Spotless</em></h2></div>
       <a class="btn b-line" href="https://www.molclean.ca/how-it-works">How It Works <svg class="i"><use href="#arr"/></svg></a>
     </div>
-    <div class="ncs"><div class="nc rv"><span class="num">01</span><h3>Choose Your Service</h3><p>Choose the type of cleaning you need, tailored to your home or business.</p></div><div class="nc rv"><span class="num">02</span><h3>Share Your Needs</h3><p>Share specific requirements and preferences for a personalized experience.</p></div><div class="nc rv"><span class="num">03</span><h3>Get a Professional Cleaner</h3><p>A skilled and trusted cleaner is assigned to your job.</p></div><div class="nc rv"><span class="num">04</span><h3>Pay Securely</h3><p>Complete your booking with a safe and hassle-free payment.</p></div><div class="nc rv"><span class="num">05</span><h3>Relax &amp; Enjoy</h3><p>Sit back and enjoy a spotless space without lifting a finger!</p></div></div>
+    <div class="ncs"><div class="nc rv"><span class="ico"><svg class="i"><use href="#list"/></svg></span><h3>Choose Your Service</h3><p>Choose the type of cleaning you need, tailored to your home or business.</p></div><div class="nc rv"><span class="ico"><svg class="i"><use href="#chat"/></svg></span><h3>Share Your Needs</h3><p>Share specific requirements and preferences for a personalized experience.</p></div><div class="nc rv"><span class="ico"><svg class="i"><use href="#user"/></svg></span><h3>Get a Professional Cleaner</h3><p>A skilled and trusted cleaner is assigned to your job.</p></div><div class="nc rv"><span class="ico"><svg class="i"><use href="#card"/></svg></span><h3>Pay Securely</h3><p>Complete your booking with a safe and hassle-free payment.</p></div><div class="nc rv"><span class="ico"><svg class="i"><use href="#smile"/></svg></span><h3>Relax &amp; Enjoy</h3><p>Sit back and enjoy a spotless space without lifting a finger!</p></div></div>
   </div>
 </section>
 
-<!-- Reviews slider -->
+<!-- Reviews -->
 <section class="sec rev" id="reviews">
   <div class="wrap">
-    <div class="rv">
-      <span class="kick">Reviews</span>
-      <h2 class="h2">What Calgary <em>Says About Us</em></h2>
-    </div>
-    <div class="rev-grid">
-      <div class="score rv">
-        <div class="row"><div class="g">4.8</div><div><span class="stars">★★★★★</span><b>Google Reviews</b><small>4.8 out of 5, based on 200 reviews</small></div></div>
-        <div class="row"><div class="g" style="color:#fff">185</div><div><span class="stars" style="color:#00b67a">★★★★★</span><b>Trustpilot: Excellent</b><small>Based on 185 reviews</small></div></div>
-        <a class="btn b-sun" href="https://www.molclean.ca/book-service">Book Your Cleaning <svg class="i"><use href="#arr"/></svg></a>
-      </div>
-      <div class="slider rv" id="slider" aria-roledescription="carousel">
-        <div class="slides" id="slides">
-          <div class="slide"><div class="q">&ldquo;</div><span class="stars">★★★★★</span><h4>Top-Notch Cleaning!</h4><p>The cleaners did an amazing job. Every corner of my house was perfectly cleaned, and the fresh smell lasted for days. Will definitely use their services again!</p><div class="who"><div class="av">D</div><div><b>David S.</b><small>MOLCLEAN client</small></div></div></div>
-          <div class="slide"><div class="q">&ldquo;</div><span class="stars">★★★★★</span><h4>Reliable and Efficient</h4><p>This is the best cleaning service I've ever used. The staff was friendly, efficient, and very detail-oriented. Great experience!</p><div class="who"><div class="av">E</div><div><b>Emily R.</b><small>MOLCLEAN client</small></div></div></div>
-          <div class="slide"><div class="q">&ldquo;</div><span class="stars">★★★★★</span><h4>Exceeded My Expectations</h4><p>I was amazed at how thorough and professional the cleaning team was. They exceeded my expectations! Will book again soon.</p><div class="who"><div class="av">M</div><div><b>Michael S.</b><small>MOLCLEAN client</small></div></div></div>
-          <div class="slide"><div class="q">&ldquo;</div><span class="stars">★★★★★</span><h4>Excellent Service!</h4><p>I couldn't be happier with the cleaning service! The team was professional, punctual, and left my home spotless. Highly recommend!</p><div class="who"><div class="av">J</div><div><b>Jessica M.</b><small>MOLCLEAN client</small></div></div></div>
-        </div>
-        <div class="ctrl">
-          <div class="dots" id="dots"></div>
-          <div class="arrows">
-            <button id="prev" aria-label="Previous review"><svg class="i" style="transform:rotate(180deg)"><use href="#arr"/></svg></button>
-            <button id="next" aria-label="Next review"><svg class="i"><use href="#arr"/></svg></button>
-          </div>
-        </div>
+    <div class="rev-head rv">
+      <div><span class="kick">Reviews</span><h2 class="h2">What Calgary <em>Says About Us</em></h2></div>
+      <div class="rsum">
+        <div class="rs"><b>4.8</b><span><span class="stars">★★★★★</span><small>Google, 200 reviews</small></span></div>
+        <div class="rs"><b>185</b><span><span class="stars" style="color:#00b67a">★★★★★</span><small>Trustpilot: Excellent</small></span></div>
       </div>
     </div>
   </div>
+  <div class="rrows">
+    <div class="rrow"><div class="rtrack"><div class="rc"><span class="stars">★★★★★</span><h4>Top-Notch Cleaning!</h4><p>The cleaners did an amazing job. Every corner of my house was perfectly cleaned, and the fresh smell lasted for days. Will definitely use their services again!</p><div class="who"><div class="av">D</div><div><b>David S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Reliable and Efficient</h4><p>This is the best cleaning service I've ever used. The staff was friendly, efficient, and very detail-oriented. Great experience!</p><div class="who"><div class="av">E</div><div><b>Emily R.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Exceeded My Expectations</h4><p>I was amazed at how thorough and professional the cleaning team was. They exceeded my expectations! Will book again soon.</p><div class="who"><div class="av">M</div><div><b>Michael S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Excellent Service!</h4><p>I couldn't be happier with the cleaning service! The team was professional, punctual, and left my home spotless. Highly recommend!</p><div class="who"><div class="av">J</div><div><b>Jessica M.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Top-Notch Cleaning!</h4><p>The cleaners did an amazing job. Every corner of my house was perfectly cleaned, and the fresh smell lasted for days. Will definitely use their services again!</p><div class="who"><div class="av">D</div><div><b>David S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Reliable and Efficient</h4><p>This is the best cleaning service I've ever used. The staff was friendly, efficient, and very detail-oriented. Great experience!</p><div class="who"><div class="av">E</div><div><b>Emily R.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Exceeded My Expectations</h4><p>I was amazed at how thorough and professional the cleaning team was. They exceeded my expectations! Will book again soon.</p><div class="who"><div class="av">M</div><div><b>Michael S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Excellent Service!</h4><p>I couldn't be happier with the cleaning service! The team was professional, punctual, and left my home spotless. Highly recommend!</p><div class="who"><div class="av">J</div><div><b>Jessica M.</b><small>MOLCLEAN client</small></div></div></div></div></div>
+    <div class="rrow rev2"><div class="rtrack"><div class="rc"><span class="stars">★★★★★</span><h4>Exceeded My Expectations</h4><p>I was amazed at how thorough and professional the cleaning team was. They exceeded my expectations! Will book again soon.</p><div class="who"><div class="av">M</div><div><b>Michael S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Excellent Service!</h4><p>I couldn't be happier with the cleaning service! The team was professional, punctual, and left my home spotless. Highly recommend!</p><div class="who"><div class="av">J</div><div><b>Jessica M.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Top-Notch Cleaning!</h4><p>The cleaners did an amazing job. Every corner of my house was perfectly cleaned, and the fresh smell lasted for days. Will definitely use their services again!</p><div class="who"><div class="av">D</div><div><b>David S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Reliable and Efficient</h4><p>This is the best cleaning service I've ever used. The staff was friendly, efficient, and very detail-oriented. Great experience!</p><div class="who"><div class="av">E</div><div><b>Emily R.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Exceeded My Expectations</h4><p>I was amazed at how thorough and professional the cleaning team was. They exceeded my expectations! Will book again soon.</p><div class="who"><div class="av">M</div><div><b>Michael S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Excellent Service!</h4><p>I couldn't be happier with the cleaning service! The team was professional, punctual, and left my home spotless. Highly recommend!</p><div class="who"><div class="av">J</div><div><b>Jessica M.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Top-Notch Cleaning!</h4><p>The cleaners did an amazing job. Every corner of my house was perfectly cleaned, and the fresh smell lasted for days. Will definitely use their services again!</p><div class="who"><div class="av">D</div><div><b>David S.</b><small>MOLCLEAN client</small></div></div></div><div class="rc"><span class="stars">★★★★★</span><h4>Reliable and Efficient</h4><p>This is the best cleaning service I've ever used. The staff was friendly, efficient, and very detail-oriented. Great experience!</p><div class="who"><div class="av">E</div><div><b>Emily R.</b><small>MOLCLEAN client</small></div></div></div></div></div>
+  </div>
+  <div class="wrap center"><a class="btn b-sun" href="https://www.molclean.ca/book-service">Book Your Cleaning <svg class="i"><use href="#arr"/></svg></a></div>
 </section>
 
 <!-- Projects -->
@@ -901,13 +918,6 @@ const tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 document.querySelectorAll('.vtab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.vtab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.vp').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById(t.dataset.t).classList.add('on')}));
 // mobile submenus
 document.querySelectorAll('.menu>li>a').forEach(a=>a.addEventListener('click',e=>{if(innerWidth<=1080&&a.nextElementSibling){e.preventDefault();a.parentElement.classList.toggle('x')}}));
-// reviews slider
-(function(){const s=document.getElementById('slides'),n=s.children.length,d=document.getElementById('dots');let i=0,t;
-for(let k=0;k<n;k++){const b=document.createElement('button');b.setAttribute('aria-label','Review '+(k+1));b.onclick=()=>go(k);d.appendChild(b)}
-function go(k){i=(k+n)%n;s.style.transform='translateX(-'+i*100+'%)';[...d.children].forEach((b,j)=>b.classList.toggle('on',j===i));clearInterval(t);t=setInterval(()=>go(i+1),6000)}
-document.getElementById('prev').onclick=()=>go(i-1);document.getElementById('next').onclick=()=>go(i+1);
-let x0=null;s.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});s.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
-go(0)})();
 // video
 document.getElementById('vid').addEventListener('click',function(){this.innerHTML='<iframe src="https://www.youtube.com/embed/AkSwAc7ApNc?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen title="MOLCLEAN video"></iframe>'},{once:true});
 // reveal
