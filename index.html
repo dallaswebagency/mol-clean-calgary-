@@ -10,8 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#07142b; --navy:#0A3F87; --navy-deep:#072f66; --sky:#48b1fb; --sky-soft:#a9dafd; --sun:#FEE74A;
-  --tint:#eaf5fe; --paper:#f6f8fb; --text:#16233a; --muted:#4b5a70; --line:rgba(10,63,135,.14);
+  --ink:#0b0b0b; --navy:#303030; --navy-deep:#1c1c1c; --sky:#40e0d0; --teal-ink:#0e8f84; --sun:#40e0d0; --charcoal:#303030;
+  --tint:#f3f4f4; --paper:#fafafa; --text:#1a1a1a; --muted:#555b5f; --line:rgba(0,0,0,.12);
   --r:22px; --display:'Barlow Condensed','Arial Narrow',system-ui,sans-serif; --body:'Figtree',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -22,14 +22,14 @@ img{max-width:100%;display:block}
 svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 .h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(38px,5vw,64px);line-height:.95;letter-spacing:.005em;color:var(--ink)}
-.h2 em{font-style:normal;color:var(--sky)}
-.kick{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
+.h2 em{font-style:normal;color:var(--teal-ink)}
+.kick{display:block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:12px}
 .lead{font-size:17px;color:var(--muted);max-width:560px;margin-top:16px}
 .sec{padding:100px 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:15px;padding:14px 24px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s;font-family:inherit;white-space:nowrap}
 .btn:hover{transform:translateY(-2px)}
 .b-sun{background:var(--sun);color:var(--ink)}
-.b-sun:hover{background:#fff27d}
+.b-sun:hover{background:#7aeadf}
 .b-navy{background:var(--navy);color:#fff}
 .b-navy:hover{background:var(--navy-deep)}
 .b-ink{background:var(--ink);color:#fff}
@@ -40,7 +40,7 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .stars{color:#fbbc05;letter-spacing:1px}
 
 /* topbar */
-.top{background:var(--ink);color:#d8e6f7;font-size:13px;font-weight:600}
+.top{background:var(--ink);color:#d6d6d6;font-size:13px;font-weight:600}
 .top .wrap{display:flex;justify-content:space-between;align-items:center;min-height:38px;gap:14px}
 .top .mid{color:var(--sun)}
 .top a{display:inline-flex;align-items:center;gap:7px}
@@ -56,7 +56,7 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .menu .dd{list-style:none;position:absolute;top:100%;left:0;min-width:320px;background:#fff;border-radius:16px;padding:10px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;max-height:72vh;overflow:auto}
 .menu>li:hover .dd{opacity:1;visibility:visible;transform:none}
 .dd a{display:block;padding:8px 12px;font-size:14px;border-radius:8px;color:var(--text)}
-.dd a:hover{background:var(--tint);color:var(--navy)}
+.dd a:hover{background:var(--tint);color:var(--teal-ink)}
 .hdr-cta{display:flex;gap:10px;align-items:center}
 .hdr-cta .b-ghost{background:transparent;border-color:rgba(255,255,255,.35);padding:11px 18px}
 .hdr-cta .b-sun{padding:11px 20px}
@@ -64,18 +64,22 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .burger span{display:block;width:24px;height:2px;background:#fff;margin:5px 0}
 
 /* hero */
-.hero{position:relative;min-height:660px;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:var(--ink)}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,20,43,.55),rgba(7,20,43,.35) 45%,rgba(7,20,43,.75))}
-.hero .wrap{position:relative;z-index:1;padding-top:90px;padding-bottom:90px}
-.hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(46px,7.4vw,96px);line-height:.92;max-width:980px;margin:0 auto;text-shadow:0 4px 30px rgba(0,0,0,.35)}
-.hero h1 em{font-style:normal;color:var(--sun)}
-.hero p{font-size:18px;max-width:600px;margin:22px auto 30px;color:#eef4fb}
-.hero .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.pill{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--ink);border-radius:14px;padding:9px 16px;margin-top:22px;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+.hero{position:relative;background:#000;color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-8%;top:-30%;width:60%;height:160%;background:radial-gradient(closest-side,rgba(64,224,208,.22),transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;padding-top:70px;padding-bottom:70px}
+.hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(46px,6.6vw,92px);line-height:.92}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero p{font-size:18px;max-width:540px;margin:22px 0 30px;color:#d9d9d9}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--ink);border-radius:14px;padding:9px 16px;margin-top:26px}
 .pill b{font-size:15px;display:block;line-height:1.2}
 .pill small{font-size:12px;color:var(--muted)}
 .pill .stars{font-size:18px}
+.hero-pic{position:relative;justify-self:end;width:100%;max-width:470px}
+.hero-pic::before{content:"";position:absolute;inset:26px -18px -18px 26px;border:2px solid var(--sky);border-radius:28px}
+.hero-pic img{position:relative;width:100%;aspect-ratio:680/700;object-fit:cover;object-position:top center;border-radius:28px;background:#eee}
+.hero-pic .chip{position:absolute;left:-26px;bottom:34px;background:var(--sky);color:var(--ink);font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:22px;line-height:1;padding:14px 18px;border-radius:16px;box-shadow:0 18px 30px -14px rgba(0,0,0,.6)}
+.hero-pic .chip small{display:block;font-family:var(--body);font-size:12px;font-weight:600;text-transform:none;margin-top:4px}
 
 /* trust band */
 .trust{background:#000;color:#fff;padding:70px 0 54px;text-align:center;overflow:hidden}
@@ -92,25 +96,25 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .tb .big{font-family:var(--display);font-weight:800;font-size:34px;color:var(--sun);line-height:1;margin-bottom:6px}
 .tb h4{font-family:var(--display);text-transform:uppercase;font-size:20px;font-weight:700;line-height:1.05}
 .tb h4 em{font-style:normal;color:var(--sky)}
-.tb p{font-size:12.5px;color:#a9b8cc;margin-top:4px;line-height:1.4}
-.trust-foot{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;font-size:13px;color:#c9d6e6}
+.tb p{font-size:12.5px;color:#a8a8a8;margin-top:4px;line-height:1.4}
+.trust-foot{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;font-size:13px;color:#c4c4c4}
 .trust-foot span{display:inline-flex;align-items:center;gap:8px}
 .trust-foot svg{color:var(--sky)}
 
 /* pricing */
 .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
 .tile{border:1px solid var(--line);border-radius:18px;padding:24px 22px 22px;text-align:center;transition:.2s;background:#fff}
-.tile:hover{border-color:var(--sky);box-shadow:0 20px 40px -24px rgba(10,63,135,.45);transform:translateY(-3px)}
-.tile .ic{color:var(--navy);display:flex;justify-content:center;margin-bottom:8px}
+.tile:hover{border-color:var(--sky);box-shadow:0 20px 40px -24px rgba(0,0,0,.45);transform:translateY(-3px)}
+.tile .ic{color:var(--teal-ink);display:flex;justify-content:center;margin-bottom:8px}
 .tile .ic svg{width:26px;height:26px}
 .tile h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:21px;line-height:1.05;color:var(--ink);min-height:44px;display:grid;place-items:center}
 .tile small{display:block;font-size:12px;color:var(--muted);margin-top:4px}
-.tile .amt{font-family:var(--display);font-weight:800;font-size:64px;color:var(--navy);line-height:1;margin:4px 0}
+.tile .amt{font-family:var(--display);font-weight:800;font-size:64px;color:var(--ink);line-height:1;margin:4px 0}
 .tile .amt sup{font-size:28px;vertical-align:top;position:relative;top:8px}
 .tile .per{font-size:13px;color:var(--muted);font-weight:600}
 .bar{height:7px;border-radius:9px;background:var(--tint);margin-top:16px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--navy);border-radius:9px}
-.tile.hot{background:var(--tint);border:2px solid var(--sky)}
+.bar i{display:block;height:100%;background:var(--sky);border-radius:9px}
+.tile.hot{background:#fff;border:2px solid var(--sky);box-shadow:0 20px 40px -26px rgba(0,0,0,.35)}
 .tile.hot .tag{display:inline-block;background:var(--sky);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:8px}
 .fine{font-size:13px;color:var(--muted);margin-top:14px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
@@ -119,36 +123,36 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .card2 p{color:var(--muted);margin-bottom:20px}
 .c-light{background:var(--tint);border:1px solid var(--line)}
 .c-dark{background:var(--ink);color:#fff}
-.c-dark h3{color:#fff}.c-dark p{color:#b7c6d9}
+.c-dark h3{color:#fff}.c-dark p{color:#b0b0b0}
 .mini{display:grid;grid-template-columns:1fr 1fr auto;gap:10px}
 .mini input,.f input,.f textarea,.f select{font:inherit;font-size:15px;padding:13px 15px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--text);outline:none;width:100%}
-.mini input:focus,.f input:focus,.f textarea:focus,.f select:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(72,177,251,.18)}
+.mini input:focus,.f input:focus,.f textarea:focus,.f select:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(64,224,208,.18)}
 
 /* services */
 .svc{background:var(--tint)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .sc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column}
-.sc .sq{width:46px;height:46px;border-radius:12px;background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:16px}
+.sc .sq{width:46px;height:46px;border-radius:12px;background:var(--ink);color:var(--sky);display:grid;place-items:center;margin-bottom:16px}
 .sc .sq svg{width:22px;height:22px}
 .sc h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:30px;line-height:1;color:var(--ink);margin-bottom:8px}
-.sc .cnt{font-size:13px;font-weight:700;color:var(--sky);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+.sc .cnt{font-size:13px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
 .sc ul{list-style:none;margin-bottom:22px}
 .sc li a{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:14.5px;font-weight:500;border-bottom:1px dashed var(--line)}
-.sc li a:hover{color:var(--navy)}
-.sc li svg{color:var(--sky);margin-top:3px;width:16px;height:16px}
+.sc li a:hover{color:var(--teal-ink)}
+.sc li svg{color:var(--teal-ink);margin-top:3px;width:16px;height:16px}
 .sc .btn{margin-top:auto;align-self:flex-start}
-.sc.dark{background:var(--navy);border-color:var(--navy);color:#e3eefb}
-.sc.dark h3{color:#fff}.sc.dark .sq{background:var(--sun);color:var(--ink)}.sc.dark .cnt{color:var(--sun)}
+.sc.dark{background:var(--navy);border-color:var(--navy);color:#e6e6e6}
+.sc.dark h3{color:#fff}.sc.dark .sq{background:var(--sky);color:var(--ink)}.sc.dark .cnt{color:var(--sun)}
 .sc.dark li a{border-color:rgba(255,255,255,.15)}.sc.dark li svg{color:var(--sun)}
 .center{text-align:center;margin-top:34px}
 
 /* steps */
 .road{position:relative;margin-top:50px;display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
-.road::before{content:"";position:absolute;top:28px;left:28px;right:28px;height:10px;border-radius:9px;background:var(--ink) repeating-linear-gradient(90deg,transparent 0 10px,var(--sun) 10px 24px,transparent 24px 34px) center/100% 2px no-repeat}
+.road::before{content:"";position:absolute;top:28px;left:28px;right:28px;height:10px;border-radius:9px;background:var(--ink) repeating-linear-gradient(90deg,transparent 0 10px,#fff 10px 24px,transparent 24px 34px) center/100% 2px no-repeat}
 .st{position:relative}
 .st .dot{width:56px;height:56px;border-radius:50%;background:var(--sky);border:4px solid #fff;box-shadow:0 0 0 2px var(--ink);display:grid;place-items:center;color:var(--ink);position:relative;z-index:1;margin-bottom:22px}
 .st .dot svg{width:24px;height:24px}
-.st .n{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase}
+.st .n{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--teal-ink);text-transform:uppercase}
 .st h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:27px;line-height:1;color:var(--ink);margin:6px 0 10px}
 .st p{font-size:14.5px;color:var(--muted)}
 .acts-c{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:44px}
@@ -161,36 +165,36 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .score .row:last-of-type{border:0;padding:0}
 .score .g{font-family:var(--display);font-weight:800;font-size:58px;line-height:1;color:var(--sun)}
 .score b{display:block;font-size:16px}
-.score small{color:#a9b8cc;font-size:13px}
+.score small{color:#a8a8a8;font-size:13px}
 .score .btn{margin-top:auto}
 .slider{position:relative;overflow:hidden;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
 .slides{display:flex;transition:transform .6s cubic-bezier(.65,0,.35,1)}
 .slide{min-width:100%;padding:44px 48px 90px;position:relative}
-.slide .q{position:absolute;right:36px;top:18px;font-family:Georgia,serif;font-size:150px;line-height:1;color:var(--tint)}
+.slide .q{position:absolute;right:36px;top:18px;font-family:Georgia,serif;font-size:150px;line-height:1;color:rgba(64,224,208,.25)}
 .slide .stars{font-size:22px}
 .slide h4{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:34px;color:var(--ink);margin:12px 0 10px;line-height:1;position:relative}
 .slide p{font-size:19px;line-height:1.55;color:var(--text);max-width:640px;position:relative}
 .who{display:flex;align-items:center;gap:12px;margin-top:26px}
-.av{width:46px;height:46px;border-radius:12px;background:var(--navy);color:#fff;font-family:var(--display);font-weight:800;font-size:20px;display:grid;place-items:center}
+.av{width:46px;height:46px;border-radius:12px;background:var(--ink);color:var(--sky);font-family:var(--display);font-weight:800;font-size:20px;display:grid;place-items:center}
 .who b{display:block;color:var(--ink)}
 .who small{color:var(--muted);font-size:13px}
 .ctrl{position:absolute;left:48px;right:48px;bottom:28px;display:flex;justify-content:space-between;align-items:center}
 .dots{display:flex;gap:8px}
 .dots button{width:10px;height:10px;border-radius:9px;border:0;background:var(--line);cursor:pointer;transition:.3s}
-.dots button.on{width:30px;background:var(--navy)}
+.dots button.on{width:30px;background:var(--ink)}
 .arrows{display:flex;gap:8px}
-.arrows button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--navy);transition:.2s}
-.arrows button:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:.2s}
+.arrows button:hover{background:var(--ink);color:var(--sky);border-color:var(--ink)}
 
 /* projects */
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .pc{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;transition:.25s}
-.pc:hover{transform:translateY(-4px);box-shadow:0 24px 44px -26px rgba(10,63,135,.55)}
+.pc:hover{transform:translateY(-4px);box-shadow:0 24px 44px -26px rgba(0,0,0,.55)}
 .pc .im{height:210px;background:var(--ink);overflow:hidden}
 .pc .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .pc:hover .im img{transform:scale(1.06)}
 .pc .bd{display:flex;gap:12px;align-items:center;padding:18px 20px}
-.pc .bd svg{color:var(--navy);width:22px;height:22px}
+.pc .bd svg{color:var(--teal-ink);width:22px;height:22px}
 .pc h4{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:23px;line-height:1;color:var(--ink)}
 
 /* about */
@@ -199,14 +203,14 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .ab p{color:var(--muted);margin-top:16px}
 .why{margin-top:26px;display:grid;gap:12px}
 .why div{display:flex;gap:14px;background:var(--tint);border-radius:16px;padding:16px 18px}
-.why .ck{width:30px;height:30px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;flex:none}
+.why .ck{width:30px;height:30px;border-radius:9px;background:var(--ink);color:var(--sky);display:grid;place-items:center;flex:none}
 .why b{color:var(--ink)}
 .why span{font-size:14.5px;color:var(--muted)}
 .vid{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--ink);cursor:pointer}
 .vid img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:transform .5s}
 .vid:hover img{transform:scale(1.04)}
 .vid .pl{position:absolute;inset:0;display:grid;place-items:center}
-.vid .pl span{width:84px;height:84px;border-radius:50%;background:var(--sun);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(254,231,74,.3)}
+.vid .pl span{width:84px;height:84px;border-radius:50%;background:var(--sun);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(64,224,208,.3)}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .f{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px;margin-top:16px;display:grid;gap:10px}
 .f h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:28px;color:var(--ink);line-height:1}
@@ -214,9 +218,9 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 
 /* final */
 .final{background:var(--sky);padding:90px 0;text-align:center;position:relative;overflow:hidden}
-.final::before{content:"$25";position:absolute;left:-30px;bottom:-90px;font-family:var(--display);font-weight:800;font-size:340px;color:rgba(7,20,43,.07);line-height:1}
+.final::before{content:"$25";position:absolute;left:-30px;bottom:-90px;font-family:var(--display);font-weight:800;font-size:340px;color:rgba(0,0,0,.07);line-height:1}
 .final h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(44px,6.6vw,88px);line-height:.92;color:var(--ink);position:relative}
-.final h5{font-size:15px;font-weight:700;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px;position:relative}
+.final h5{font-size:15px;font-weight:700;color:var(--ink);text-transform:uppercase;letter-spacing:.14em;margin-bottom:14px;position:relative}
 .final p{font-size:18px;color:var(--ink);margin:16px 0 28px;position:relative}
 .final form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;max-width:760px;margin:0 auto;position:relative}
 .final input{font:inherit;padding:15px 16px;border-radius:999px;border:0;outline:none;font-size:15px}
@@ -227,7 +231,7 @@ svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .checks span{display:inline-flex;align-items:center;gap:7px}
 
 /* footer */
-footer{background:#000;color:#aab6c6;padding:70px 0 0;font-size:14px}
+footer{background:#000;color:#a6a6a6;padding:70px 0 0;font-size:14px}
 .ft{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:30px}
 footer h5{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);margin-bottom:16px}
 footer ul{list-style:none}
@@ -254,7 +258,7 @@ footer a:hover{color:#fff}
   .burger{display:block}
   .menu.open{display:flex;flex-direction:column;position:absolute;top:78px;left:0;right:0;background:#000;padding:12px 20px 20px;max-height:80vh;overflow:auto}
   .menu.open .dd{position:static;opacity:1;visibility:visible;transform:none;display:none;box-shadow:none;background:transparent;padding:0 0 0 12px;min-width:0}
-  .menu.open .dd a{color:#cfd9e6}
+  .menu.open .dd a{color:#cccccc}
   .menu.open li.x .dd{display:block}
   .hdr-cta .b-ghost{display:none}
   .ft{grid-template-columns:1fr 1fr 1fr}
@@ -265,7 +269,8 @@ footer a:hover{color:#fff}
 }
 @media (max-width:860px){
   .tiles,.svc-grid,.proj-grid{grid-template-columns:1fr 1fr}
-  .duo,.rev-grid,.ab{grid-template-columns:1fr}
+  .duo,.rev-grid,.ab,.hero .wrap{grid-template-columns:1fr}
+  .hero-pic{justify-self:center;max-width:420px;margin-top:10px}
   .svc-grid .sc:last-child{grid-column:1/-1}
 }
 @media (max-width:620px){
@@ -273,7 +278,8 @@ footer a:hover{color:#fff}
   .sec{padding:70px 0}
   .top .mid,.top .l{display:none}
   .top .wrap{justify-content:center}
-  .hero{min-height:560px}
+  .hero-pic .chip{left:-8px}
+  .hero-pic::before{inset:18px -10px -10px 18px}
   .tiles,.svc-grid,.proj-grid{grid-template-columns:1fr}
   .mini,.final form{grid-template-columns:1fr}
   .slide{padding:34px 24px 90px}
@@ -288,6 +294,135 @@ footer a:hover{color:#fff}
   .mbar a:first-child{background:var(--sun);color:var(--ink)}
   footer{padding-bottom:62px}
 }
+/* v3 sections */
+.hero .rates{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.hero .rates .pill{margin-top:0}
+.feats{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:0!important;padding-top:0!important;padding-bottom:0!important;border-top:1px solid rgba(255,255,255,.12)}
+.ft1{display:flex;gap:14px;align-items:flex-start;padding:26px 22px 30px 0}
+.ft1+.ft1{padding-left:22px;border-left:1px solid rgba(255,255,255,.12)}
+.ft1 .fi{width:46px;height:46px;border-radius:12px;background:#fff;flex:none;padding:7px}
+.ft1 .fi img{width:100%;height:100%;object-fit:contain}
+.ft1 b{display:block;color:#fff;font-size:15px;margin-bottom:3px}
+.ft1 small{font-size:13px;color:#a8a8a8;line-height:1.45;display:block}
+.ticker{background:var(--sky);overflow:hidden;padding:16px 0;border-bottom:1px solid #000}
+.tk{display:flex;align-items:center;gap:26px;width:max-content;animation:slide 40s linear infinite;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:26px;color:var(--ink);white-space:nowrap}
+.tk i{font-style:normal;font-size:18px}
+.pr{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+.offer{margin-top:30px;background:var(--navy);color:#ddd;border-radius:var(--r);padding:28px;position:relative;overflow:hidden}
+.offer::after{content:"$25";position:absolute;right:-6px;top:-30px;font-family:var(--display);font-weight:800;font-size:150px;color:rgba(64,224,208,.12);line-height:1}
+.off-tag{display:inline-block;background:var(--sky);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.offer h3{font-family:var(--display);font-weight:800;text-transform:uppercase;color:#fff;font-size:30px;line-height:1;margin-bottom:8px;position:relative}
+.offer p{color:#bdbdbd;margin-bottom:18px;font-size:15px;position:relative}
+.offer .mini{position:relative}
+.offer .mini input{border-color:transparent}
+.plist{display:grid;gap:12px}
+.prow{display:grid;grid-template-columns:auto 1fr auto auto;gap:20px;align-items:center;border:1.5px solid var(--line);border-radius:20px;padding:22px 24px;transition:.25s;background:#fff}
+.prow:hover{border-color:var(--ink);transform:translateX(4px)}
+.prow .pn{font-family:var(--display);font-weight:800;font-size:22px;color:var(--teal-ink)}
+.prow b{display:block;font-size:17px;color:var(--ink)}
+.prow small{color:var(--muted);font-size:13px}
+.prow .pp{font-family:var(--display);font-weight:800;font-size:60px;line-height:1;color:var(--ink)}
+.prow .pp sup{font-size:24px;vertical-align:top;position:relative;top:6px}
+.prow .go{font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;background:var(--ink);color:#fff}
+.prow.hot{background:var(--sky);border-color:var(--sky)}
+.prow.hot .pn,.prow.hot small{color:var(--ink)}
+.plist .fine a{color:var(--teal-ink);font-weight:700}
+.svc-top,.how-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.vt{display:grid;grid-template-columns:320px 1fr;margin-top:40px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#fff}
+.vt-nav{background:var(--ink);padding:16px;display:flex;flex-direction:column;gap:8px}
+.vtab{text-align:left;border:0;background:transparent;color:#fff;font:inherit;padding:18px 18px;border-radius:14px;cursor:pointer;border:1px solid rgba(255,255,255,.1);transition:.2s}
+.vtab b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:24px;line-height:1}
+.vtab small{color:#9a9a9a;font-size:13px}
+.vtab:hover{border-color:var(--sky)}
+.vtab.on{background:var(--sky);color:var(--ink);border-color:var(--sky)}
+.vtab.on small{color:var(--ink)}
+.vt-nav .btn{margin-top:auto}
+.vt-body{padding:22px}
+.vp{display:none;grid-template-columns:1fr 1fr;gap:8px}
+.vp.on{display:grid;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.vp a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 16px;border-radius:12px;background:var(--tint);font-weight:600;font-size:14.5px;color:var(--ink);transition:.2s}
+.vp a svg{color:var(--teal-ink);transition:transform .2s}
+.vp a:hover{background:var(--ink);color:#fff}
+.vp a:hover svg{color:var(--sky);transform:translateX(3px)}
+.how{background:var(--tint)}
+.ncs{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.nc{background:#fff;border-radius:20px;padding:24px 20px 26px;border-top:4px solid var(--ink);transition:.25s}
+.nc:hover{border-top-color:var(--sky);transform:translateY(-4px)}
+.nc .num{font-family:var(--display);font-weight:800;font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.nc:hover .num{color:var(--sky);-webkit-text-stroke-color:var(--sky)}
+.nc h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:24px;line-height:1;color:var(--ink);margin:14px 0 8px}
+.nc p{font-size:14px;color:var(--muted)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:220px;gap:14px;margin-top:40px}
+.bt{position:relative;border-radius:20px;overflow:hidden;background:var(--navy);display:block}
+.bt img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.bt:hover img{transform:scale(1.06)}
+.bt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.8))}
+.bt span{position:absolute;left:18px;right:18px;bottom:16px;z-index:1;color:#fff;font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:24px;line-height:1}
+.b1{grid-row:span 2}
+.b6{grid-column:span 2}
+.bt.cta{background:var(--sky);display:flex;align-items:flex-end;justify-content:space-between;padding:22px;color:var(--ink)}
+.bt.cta::after{display:none}
+.bt.cta b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:30px;line-height:1}
+.bt.cta svg{width:28px;height:28px}
+.final-w{padding:0 0 100px}
+.fbox{background:var(--sky);border-radius:28px;padding:54px;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.fbox::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;border:60px solid rgba(0,0,0,.06);left:-120px;bottom:-160px}
+.fbox>*{position:relative}
+.fbox h5{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:12px}
+.fbox h2{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(38px,5vw,66px);line-height:.92;color:var(--ink)}
+.fbox p{font-size:17px;color:var(--ink);margin:14px 0 4px}
+.fbox .checks{justify-content:flex-start;margin-top:18px}
+.fform{background:#fff;border-radius:22px;padding:24px;display:grid;gap:10px;box-shadow:0 30px 50px -30px rgba(0,0,0,.5)}
+.fform input{font:inherit;font-size:15px;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);outline:none;width:100%}
+.fform input:focus{border-color:var(--ink)}
+.fform .btn{width:100%}
+.fform .or{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px;font-weight:700;padding-top:4px}
+.fform .or a{display:inline-flex;align-items:center;gap:6px;color:var(--ink)}
+.fform .or a:hover{color:var(--teal-ink)}
+@media (max-width:1080px){
+  .ncs{grid-template-columns:repeat(3,1fr)}
+  .feats{grid-template-columns:1fr 1fr!important}
+  .ft1:nth-child(3){padding-left:0;border-left:0}
+  .ft1:nth-child(n+3){border-top:1px solid rgba(255,255,255,.12)}
+}
+@media (max-width:860px){
+  .pr,.fbox{grid-template-columns:1fr}
+  .vt{grid-template-columns:1fr}
+  .vt-nav{flex-direction:row;overflow-x:auto;scrollbar-width:none}
+  .vtab{flex:none;padding:12px 16px}
+  .vtab b{font-size:19px}
+  .vt-nav .btn{display:none}
+  .bento{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .b1{grid-row:span 1;grid-column:span 2}
+  .b6{grid-column:span 1}
+  .fbox{padding:36px 28px}
+}
+@media (max-width:620px){
+  .feats{grid-template-columns:1fr!important}
+  .ft1,.ft1+.ft1{padding:18px 0;border-left:0;border-top:1px solid rgba(255,255,255,.12)}
+  .ncs{grid-template-columns:1fr 1fr;gap:10px}
+  .nc{padding:18px 16px}
+  .nc .num{font-size:46px}
+  .nc h3{font-size:20px}
+  .ncs .nc:last-child{grid-column:span 2}
+  .vp{grid-template-columns:1fr}
+  .vt-body{padding:14px}
+  .prow{grid-template-columns:1fr auto;gap:6px 14px;padding:18px}
+  .prow .pn{display:none}
+  .prow .go{grid-column:1/-1;text-align:center}
+  .prow .pp{font-size:50px}
+  .bento{grid-template-columns:1fr;grid-auto-rows:200px}
+  .b1,.b6{grid-column:span 1}
+  .final-w{padding-bottom:70px}
+  .fbox{padding:30px 20px;border-radius:22px}
+  .tk{font-size:20px}
+  .offer .mini{grid-template-columns:1fr}
+  .hero .wrap{padding-top:44px;padding-bottom:50px;gap:34px}
+  .hero h1{font-size:44px}
+  .hero .acts .btn{flex:1 1 100%}
+}
+
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.track{animation:none}}
@@ -389,84 +524,58 @@ footer a:hover{color:#fff}
 
 <!-- Hero -->
 <section class="hero">
-  <img src="https://www.molclean.ca/uploads/topics/17630417038625.webp" alt="House & Commercial Cleaning in Calgary">
   <div class="wrap">
-    <h1>House &amp; Commercial <em>Cleaning</em> in Calgary.</h1>
-    <p>Trusted home cleaning in Calgary. Experienced cleaners, flexible scheduling, eco-friendly products, and spotless results.</p>
-    <div class="acts">
-      <a class="btn b-sun" href="https://www.molclean.ca/book-service">Request a Quote &amp; Save $25 <svg class="i"><use href="#arr"/></svg></a>
-      <a class="btn b-ghost" href="tel:+15875758454"><svg class="i"><use href="#phone"/></svg>+1 587 575 8454</a>
+    <div>
+      <h1>House &amp; Commercial <em>Cleaning</em> in Calgary.</h1>
+      <p>Trusted home cleaning in Calgary. Experienced cleaners, flexible scheduling, eco-friendly products, and spotless results.</p>
+      <div class="acts">
+        <a class="btn b-sun" href="https://www.molclean.ca/book-service">Request a Quote &amp; Save $25 <svg class="i"><use href="#arr"/></svg></a>
+        <a class="btn b-ghost" href="tel:+15875758454"><svg class="i"><use href="#phone"/></svg>+1 587 575 8454</a>
+      </div>
+      <div class="rates">
+        <div class="pill"><span class="stars">★★★★★</span><span><b>4.8 on Google</b><small>Based on 200 reviews</small></span></div>
+        <div class="pill"><span class="stars" style="color:#00b67a">★★★★★</span><span><b>Trustpilot Excellent</b><small>Based on 185 reviews</small></span></div>
+      </div>
     </div>
-    <div class="pill"><span class="stars">★★★★★</span><span style="text-align:left"><b>4.8 on Google</b><small>Based on 200 reviews</small></span></div>
+    <div class="hero-pic">
+      <img src="https://www.molclean.ca/uploads/topics/17630417038625.webp" alt="MOLCLEAN professional cleaning team in Calgary">
+      <div class="chip">$25 Off<small>your first cleaning</small></div>
+    </div>
+  </div>
+  <div class="wrap feats">
+    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412665358423.webp" alt=""></span><div><b>Professional Team</b><small>Our trained, insured cleaners ensure professional, trusted service and impeccable results.</small></div></div>
+    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412666262629.webp" alt=""></span><div><b>Transparent Pricing</b><small>Affordable, upfront rates with no hidden costs. Quality cleaning at the right price.</small></div></div>
+    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412665876065.webp" alt=""></span><div><b>On Time Service</b><small>Reliable, punctual service that respects your schedule and exceeds expectations.</small></div></div>
+    <div class="ft1"><span class="fi"><img src="https://www.molclean.ca/uploads/topics/17412666564311.webp" alt=""></span><div><b>Eco Friendly</b><small>We use non-toxic, eco-friendly products for a safe, healthy, and sparkling environment.</small></div></div>
   </div>
 </section>
 
-<!-- Trust band -->
-<section class="trust">
-  <div class="wrap">
-    <span class="kick">Trusted by Hundreds of Clients</span>
-    <h2>Professional. On Time. <em>Eco Friendly.</em></h2>
-  </div>
-  <div class="marq">
-    <div class="track" id="track">
-      <div class="tb"><div class="big">4.8</div><h4>Google <em>Rating</em></h4><p><span class="stars">★★★★★</span><br>Based on 200 reviews</p></div>
-      <div class="tb"><div class="ic"><img src="https://www.molclean.ca/uploads/topics/17412665358423.webp" alt=""></div><h4>Professional <em>Team</em></h4><p>Trained, insured cleaners</p></div>
-      <div class="tb"><div class="ic"><img src="https://www.molclean.ca/uploads/topics/17412666262629.webp" alt=""></div><h4>Transparent <em>Pricing</em></h4><p>Upfront rates, no hidden costs</p></div>
-      <div class="tb"><div class="big">185</div><h4>Trustpilot <em>Excellent</em></h4><p>Based on 185 reviews</p></div>
-      <div class="tb"><div class="ic"><img src="https://www.molclean.ca/uploads/topics/17412665876065.webp" alt=""></div><h4>On Time <em>Service</em></h4><p>Respects your schedule</p></div>
-      <div class="tb"><div class="ic"><img src="https://www.molclean.ca/uploads/topics/17412666564311.webp" alt=""></div><h4>Eco <em>Friendly</em></h4><p>Non-toxic, eco-friendly products</p></div>
-    </div>
-  </div>
-  <div class="wrap trust-foot">
-    <span><svg class="i"><use href="#shield"/></svg>Residential &amp; commercial cleaning across Calgary, Alberta</span>
-    <span><svg class="i"><use href="#clock"/></svg>We're Open Mon to Sun 8 am - 6 pm</span>
-  </div>
-</section>
+<!-- Ticker -->
+<div class="ticker" aria-hidden="true"><div class="tk" id="track"><span>Office Cleaning</span><i>✦</i><span>House Cleaning</span><i>✦</i><span>Move In Move Out</span><i>✦</i><span>Airbnb Cleaning</span><i>✦</i><span>Post Construction</span><i>✦</i><span>Carpet &amp; Upholstery</span><i>✦</i><span>Window Cleaning</span><i>✦</i><span>Pressure Washing</span><i>✦</i><span>Deep Cleaning</span><i>✦</i><span>Condo &amp; Apartment</span><i>✦</i></div></div>
 
 <!-- Pricing -->
-<section class="sec" id="pricing" style="border-bottom:1px solid var(--line)">
-  <div class="wrap">
+<section class="sec" id="pricing">
+  <div class="wrap pr">
     <div class="rv">
       <span class="kick">Complete Solutions</span>
-      <h2 class="h2">Pricing Plans. <em>No Hidden Costs.</em></h2>
+      <h2 class="h2">Pricing <em>Plans</em></h2>
       <p class="lead">Choose from flexible, affordable cleaning plans designed to fit your needs, from one-time deep cleans to regular maintenance services.</p>
-    </div>
-    <div class="tiles">
-      <div class="tile rv">
-        <div class="ic"><svg class="i"><use href="#spark"/></svg></div>
-        <h4>One Time or Monthly</h4>
-        <div class="amt"><sup>$</sup>49</div><div class="per">/Hour/Cleaner</div>
-        <div class="bar"><i style="width:100%"></i></div>
-      </div>
-      <div class="tile hot rv">
-        <span class="tag">Recurring</span>
-        <h4>Recurring (Weekly, Biweekly)</h4>
-        <div class="amt"><sup>$</sup>43</div><div class="per">/Hour/Cleaner</div>
-        <div class="bar"><i style="width:88%"></i></div>
-      </div>
-      <div class="tile rv">
-        <div class="ic"><svg class="i"><use href="#bld"/></svg></div>
-        <h4>Office &amp; Commercial</h4>
-        <div class="amt"><sup>$</sup>40</div><div class="per">/Hour/Cleaner</div>
-        <div class="bar"><i style="width:82%"></i></div>
-      </div>
-    </div>
-    <p class="fine">Affordable, upfront rates with no hidden costs. Quality cleaning at the right price.</p>
-    <div class="duo">
-      <div class="card2 c-light rv">
-        <h3>Get $25 Off Your First Cleaning</h3>
+      <div class="offer">
+        <span class="off-tag">New clients</span>
+        <h3>Get a $25 discount on your first cleaning</h3>
         <p>Haven't ordered our services before? We will contact you to specify the details.</p>
         <form class="mini" action="https://www.molclean.ca/book-service" method="get">
           <input name="name" placeholder="Name" aria-label="Name">
           <input name="contact" placeholder="Phone number or email" aria-label="Phone number or email">
-          <button class="btn b-navy" type="submit">Claim <svg class="i"><use href="#arr"/></svg></button>
+          <button class="btn b-sun" type="submit">Claim $25</button>
         </form>
       </div>
-      <div class="card2 c-dark rv">
-        <h3>Book Online</h3>
-        <p>Click to get a Quote Instantly! Pick your service, share your needs and book in minutes.</p>
-        <a class="btn b-sun" href="https://www.molclean.ca/book-service">Book Now <svg class="i"><use href="#arr"/></svg></a>
-      </div>
+    </div>
+    <div class="plist rv">
+      <a class="prow" href="https://www.molclean.ca/book-service"><span class="pn">01</span><span class="pt"><b>One Time or Monthly</b><small>/Hour/Cleaner</small></span><span class="pp"><sup>$</sup>49</span><span class="go">Book Now</span></a>
+      <a class="prow hot" href="https://www.molclean.ca/book-service"><span class="pn">02</span><span class="pt"><b>Recurring (Weekly, Biweekly)</b><small>/Hour/Cleaner</small></span><span class="pp"><sup>$</sup>43</span><span class="go">Book Now</span></a>
+      <a class="prow" href="https://www.molclean.ca/book-service"><span class="pn">03</span><span class="pt"><b>Office &amp; Commercial</b><small>/Hour/Cleaner</small></span><span class="pp"><sup>$</sup>40</span><span class="go">Book Now</span></a>
+      <p class="fine">Affordable, upfront rates with no hidden costs. <a href="https://www.molclean.ca/book-service">Click to get a Quote Instantly!</a></p>
     </div>
   </div>
 </section>
@@ -474,79 +583,68 @@ footer a:hover{color:#fff}
 <!-- Services -->
 <section class="sec svc" id="services">
   <div class="wrap">
-    <div class="rv">
-      <span class="kick">Our Services</span>
-      <h2 class="h2">Our Cleaning Services</h2>
+    <div class="svc-top rv">
+      <div><span class="kick">Our Services</span><h2 class="h2">Our Cleaning <em>Services</em></h2></div>
       <p class="lead">Whether it's a quick refresh or a deep clean transformation, our expert touch leaves your home or office shining.</p>
     </div>
-    <div class="svc-grid">
-      <div class="sc rv">
-        <div class="sq"><svg class="i"><use href="#home"/></svg></div>
-        <h3>Residential &amp; Apartment</h3>
-        <div class="cnt">7 Services</div>
-        <ul>
-          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/general-house-cleaning"><svg class="i"><use href="#check"/></svg>General House Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/regular-housekeeping-cleaning-services"><svg class="i"><use href="#check"/></svg>Regular Housekeeping Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-off-deep-cleaning-services"><svg class="i"><use href="#check"/></svg>One Off Deep Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/move-in-move-out-cleaning-services"><svg class="i"><use href="#check"/></svg>Move In Move Out Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/condo-apartment-cleaning-services"><svg class="i"><use href="#check"/></svg>Condo &amp; Apartment Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/airbnb-cleaning-services"><svg class="i"><use href="#check"/></svg>Airbnb Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-time-cleaning"><svg class="i"><use href="#check"/></svg>One time Cleaning</a></li>
-        </ul>
-        <a class="btn b-line" href="https://www.molclean.ca/services/residential-&-apartment">View Residential <svg class="i"><use href="#arr"/></svg></a>
+    <div class="vt rv">
+      <div class="vt-nav" role="tablist">
+        <button class="vtab on" data-t="t1"><b>Residential &amp; Apartment</b><small>7 services</small></button>
+        <button class="vtab" data-t="t2"><b>Commercial</b><small>14 services</small></button>
+        <button class="vtab" data-t="t3"><b>Specialty</b><small>10 services</small></button>
+        <a class="btn b-sun" href="https://www.molclean.ca/book-service">Get Quote <svg class="i"><use href="#arr"/></svg></a>
       </div>
-      <div class="sc dark rv">
-        <div class="sq"><svg class="i"><use href="#bld"/></svg></div>
-        <h3>Commercial</h3>
-        <div class="cnt">14 Services</div>
-        <ul>
-          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/office-&-building-cleaning-services"><svg class="i"><use href="#check"/></svg>Office and Building Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/financial-institution-and-bank-cleaning-services"><svg class="i"><use href="#check"/></svg>Financial Institution &amp; Bank</a></li>
-          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/medical-&-healthcare-facilities-cleaning-services"><svg class="i"><use href="#check"/></svg>Medical &amp; Healthcare Facilities</a></li>
-          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/schools-&-education-building-cleaning-services"><svg class="i"><use href="#check"/></svg>Schools &amp; Education Buildings</a></li>
-          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/retail-cleaning-services"><svg class="i"><use href="#check"/></svg>Retail Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/Hotel%20&%20Resort%20Housekeeping%20Services"><svg class="i"><use href="#check"/></svg>Hotel &amp; Resort Housekeeping</a></li>
-          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/commercial-kitchen-&-restaurant-cleaning-services"><svg class="i"><use href="#check"/></svg>Commercial Kitchen &amp; Restaurant</a></li>
-        </ul>
-        <a class="btn b-sun" href="https://www.molclean.ca/services/commercial">View All 14 Commercial <svg class="i"><use href="#arr"/></svg></a>
-      </div>
-      <div class="sc rv">
-        <div class="sq"><svg class="i"><use href="#spark"/></svg></div>
-        <h3>Specialty</h3>
-        <div class="cnt">10 Services</div>
-        <ul>
-          <li><a href="https://www.molclean.ca/services/specialty/carpet-cleaning-services"><svg class="i"><use href="#check"/></svg>Carpet Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/specialty/upholstery-cleaning"><svg class="i"><use href="#check"/></svg>Upholstery Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/specialty/window-cleaning-services"><svg class="i"><use href="#check"/></svg>Window Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/specialty/pressure-washing"><svg class="i"><use href="#check"/></svg>Pressure Washing</a></li>
-          <li><a href="https://www.molclean.ca/services/specialty/post-construction-cleaning-services"><svg class="i"><use href="#check"/></svg>Post Construction Cleaning</a></li>
-          <li><a href="https://www.molclean.ca/services/specialty/certified-cleaning-disinfecting-&-decontaminations"><svg class="i"><use href="#check"/></svg>Disinfecting &amp; Decontaminations</a></li>
-          <li><a href="https://www.molclean.ca/services/specialty/floor-cleaning-services"><svg class="i"><use href="#check"/></svg>Floor Cleaning</a></li>
-        </ul>
-        <a class="btn b-line" href="https://www.molclean.ca/services/specialty">View Specialty <svg class="i"><use href="#arr"/></svg></a>
+      <div class="vt-body">
+        <div class="vp on" id="t1">
+          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-off-deep-cleaning-services">One Off Deep Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/airbnb-cleaning-services">Airbnb Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/move-in-move-out-cleaning-services">Move In Move Out Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/regular-housekeeping-cleaning-services">Regular Housekeeping Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/condo-apartment-cleaning-services">Condo & Apartment Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/general-house-cleaning">General House Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-time-cleaning">One time Cleaning<svg class="i"><use href="#arr"/></svg></a>
+        </div>
+        <div class="vp" id="t2">
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/office-&-building-cleaning-services">Office and Building Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/financial-institution-and-bank-cleaning-services">Financial Institution & Bank Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/public-and-government-buildings-cleaning">Public and Government Buildings Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/religious-and-cultural-facilities-cleaning">Religious and Cultural Facilities Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/property-&-facility-management-cleaning">Property & Facility Management Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/schools-&-education-building-cleaning-services">Schools & Education Building Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/retail-cleaning-services">Retail Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/spa-&-beauty-salon-cleaning-services">Spa & Beauty Salon Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/gym-&-fitnes-centre-cleaning-services">Gym & Fitness Centre Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/car-dealership-&-automotive-cleaning">Car Dealership & Automotive Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/medical-&-healthcare-facilities-cleaning-services">Medical & Healthcare Facilities Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/Hotel%20&%20Resort%20Housekeeping%20Services">Hotel & Resort Housekeeping Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/commercial-kitchen-&-restaurant-cleaning-services">Commercial Kitchen & Restaurant Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/recreational-&-leisure-facility-cleaning-services">Recreational & Leisure Facility Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+        </div>
+        <div class="vp" id="t3">
+          <a href="https://www.molclean.ca/services/specialty/pressure-washing">Pressure Washing<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/high-dusting-&-vacuuming">High Dusting & Vacuuming<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/upholstery-cleaning">Upholstery Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/exterior-areas-cleaning">Exterior Areas Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/eco-friendly-cleaning">Eco-Friendly Cleaning<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/window-cleaning-services">Window Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/carpet-cleaning-services">Carpet Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/floor-cleaning-services">Floor Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/certified-cleaning-disinfecting-&-decontaminations">Certified Cleaning, Disinfecting & Decontaminations<svg class="i"><use href="#arr"/></svg></a>
+          <a href="https://www.molclean.ca/services/specialty/post-construction-cleaning-services">Post Construction Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- How it works -->
-<section class="sec" id="how">
+<section class="sec how" id="how">
   <div class="wrap">
-    <div class="rv">
-      <span class="kick">How It Works</span>
-      <h2 class="h2">Five Steps. <em>Spotless Space.</em></h2>
+    <div class="how-top rv">
+      <div><span class="kick">How It Works</span><h2 class="h2">From Booking to <em>Spotless</em></h2></div>
+      <a class="btn b-line" href="https://www.molclean.ca/how-it-works">How It Works <svg class="i"><use href="#arr"/></svg></a>
     </div>
-    <div class="road">
-      <div class="st rv"><div class="dot"><svg class="i"><use href="#list"/></svg></div><span class="n">Step 1</span><h3>Choose Your Service</h3><p>Choose the type of cleaning you need, tailored to your home or business.</p></div>
-      <div class="st rv"><div class="dot"><svg class="i"><use href="#chat"/></svg></div><span class="n">Step 2</span><h3>Share Your Needs</h3><p>Share specific requirements and preferences for a personalized experience.</p></div>
-      <div class="st rv"><div class="dot"><svg class="i"><use href="#user"/></svg></div><span class="n">Step 3</span><h3>Get a Professional Cleaner</h3><p>A skilled and trusted cleaner is assigned to your job.</p></div>
-      <div class="st rv"><div class="dot"><svg class="i"><use href="#card"/></svg></div><span class="n">Step 4</span><h3>Pay Securely</h3><p>Complete your booking with a safe and hassle-free payment.</p></div>
-      <div class="st rv"><div class="dot"><svg class="i"><use href="#smile"/></svg></div><span class="n">Step 5</span><h3>Relax &amp; Enjoy</h3><p>Sit back and enjoy a spotless space without lifting a finger!</p></div>
-    </div>
-    <div class="acts-c">
-      <a class="btn b-navy" href="https://www.molclean.ca/book-service">Get Quote <svg class="i"><use href="#arr"/></svg></a>
-      <a class="btn b-line" href="https://www.molclean.ca/how-it-works">How It Works</a>
-    </div>
+    <div class="ncs"><div class="nc rv"><span class="num">01</span><h3>Choose Your Service</h3><p>Choose the type of cleaning you need, tailored to your home or business.</p></div><div class="nc rv"><span class="num">02</span><h3>Share Your Needs</h3><p>Share specific requirements and preferences for a personalized experience.</p></div><div class="nc rv"><span class="num">03</span><h3>Get a Professional Cleaner</h3><p>A skilled and trusted cleaner is assigned to your job.</p></div><div class="nc rv"><span class="num">04</span><h3>Pay Securely</h3><p>Complete your booking with a safe and hassle-free payment.</p></div><div class="nc rv"><span class="num">05</span><h3>Relax &amp; Enjoy</h3><p>Sit back and enjoy a spotless space without lifting a finger!</p></div></div>
   </div>
 </section>
 
@@ -585,19 +683,8 @@ footer a:hover{color:#fff}
 <!-- Projects -->
 <section class="sec" id="projects">
   <div class="wrap">
-    <div class="rv">
-      <span class="kick">Projects</span>
-      <h2 class="h2">Real Jobs. <em>Spotless Results.</em></h2>
-    </div>
-    <div class="proj-grid">
-      <a class="pc rv" href="https://www.molclean.ca/projects"><div class="im"><img src="https://www.molclean.ca/uploads/topics/17412735517932.webp" alt="Residential Deep Cleaning"></div><div class="bd"><svg class="i"><use href="#ccheck"/></svg><h4>Residential Deep Cleaning</h4></div></a>
-      <a class="pc rv" href="https://www.molclean.ca/projects"><div class="im"><img src="https://www.molclean.ca/uploads/topics/17412735822997.webp" alt="Commercial Office Cleaning"></div><div class="bd"><svg class="i"><use href="#ccheck"/></svg><h4>Commercial Office Cleaning</h4></div></a>
-      <a class="pc rv" href="https://www.molclean.ca/projects"><div class="im"><img src="https://www.molclean.ca/uploads/topics/17415912453463.webp" alt="Post-Construction Cleanup"></div><div class="bd"><svg class="i"><use href="#ccheck"/></svg><h4>Post-Construction Cleanup</h4></div></a>
-      <a class="pc rv" href="https://www.molclean.ca/projects"><div class="im"><img src="https://www.molclean.ca/uploads/topics/17412736008198.webp" alt="Eco-Friendly Cleaning"></div><div class="bd"><svg class="i"><use href="#ccheck"/></svg><h4>Eco-Friendly Cleaning</h4></div></a>
-      <a class="pc rv" href="https://www.molclean.ca/projects"><div class="im"><img src="https://www.molclean.ca/uploads/topics/17412736279138.webp" alt="Industrial Cleaning"></div><div class="bd"><svg class="i"><use href="#ccheck"/></svg><h4>Industrial Cleaning</h4></div></a>
-      <a class="pc rv" href="https://www.molclean.ca/projects"><div class="im"><img src="https://www.molclean.ca/uploads/topics/17491269682141.webp" alt="Medical Facility Cleaning"></div><div class="bd"><svg class="i"><use href="#ccheck"/></svg><h4>Medical Facility Cleaning</h4></div></a>
-    </div>
-    <div class="center"><a class="btn b-navy" href="https://www.molclean.ca/projects">View All Projects <svg class="i"><use href="#arr"/></svg></a></div>
+    <div class="rv"><span class="kick">Projects</span><h2 class="h2">Recent <em>Projects</em></h2></div>
+    <div class="bento rv"><a class="bt b1" href="https://www.molclean.ca/projects"><img src="https://www.molclean.ca/uploads/topics/17412735517932.webp" alt="Residential Deep Cleaning"><span>Residential Deep Cleaning</span></a><a class="bt b2" href="https://www.molclean.ca/projects"><img src="https://www.molclean.ca/uploads/topics/17412735822997.webp" alt="Commercial Office Cleaning"><span>Commercial Office Cleaning</span></a><a class="bt b3" href="https://www.molclean.ca/projects"><img src="https://www.molclean.ca/uploads/topics/17415912453463.webp" alt="Post-Construction Cleanup"><span>Post-Construction Cleanup</span></a><a class="bt b4" href="https://www.molclean.ca/projects"><img src="https://www.molclean.ca/uploads/topics/17412736008198.webp" alt="Eco-Friendly Cleaning"><span>Eco-Friendly Cleaning</span></a><a class="bt b5" href="https://www.molclean.ca/projects"><img src="https://www.molclean.ca/uploads/topics/17412736279138.webp" alt="Industrial Cleaning"><span>Industrial Cleaning</span></a><a class="bt b6" href="https://www.molclean.ca/projects"><img src="https://www.molclean.ca/uploads/topics/17491269682141.webp" alt="Medical Facility Cleaning"><span>Medical Facility Cleaning</span></a><a class="bt cta" href="https://www.molclean.ca/projects"><b>View All Projects</b><svg class="i"><use href="#arr"/></svg></a></div>
   </div>
 </section>
 
@@ -618,7 +705,7 @@ footer a:hover{color:#fff}
     <div class="rv">
       <div class="vid" id="vid" role="button" aria-label="Play MOLCLEAN video">
         <img src="https://img.youtube.com/vi/AkSwAc7ApNc/hqdefault.jpg" alt="MOLCLEAN video">
-        <div class="pl"><span><svg width="28" height="28" viewBox="0 0 24 24" fill="#07142b"><path d="M7 4v16l13-8z"/></svg></span></div>
+        <div class="pl"><span><svg width="28" height="28" viewBox="0 0 24 24" fill="#0b0b0b"><path d="M7 4v16l13-8z"/></svg></span></div>
       </div>
       <form class="f" action="https://www.molclean.ca/contact" method="get">
         <h3>Do you have any question?</h3>
@@ -632,24 +719,25 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- Final CTA -->
-<section class="final" id="quote">
+<section class="final-w" id="quote">
   <div class="wrap">
-    <h5>Haven't ordered our services before?</h5>
-    <h2>Get a $25 Discount on<br>Your First Cleaning</h2>
-    <p>We will contact you to specify the details.</p>
-    <form action="https://www.molclean.ca/book-service" method="get">
-      <input name="name" placeholder="Name" aria-label="Name">
-      <input name="contact" placeholder="Phone number or email" aria-label="Phone number or email">
-      <button class="btn b-ink" type="submit">Get a Free Quote <svg class="i"><use href="#arr"/></svg></button>
-    </form>
-    <div class="row2">
-      <a class="btn b-line" href="https://www.molclean.ca/book-service">Book Online</a>
-      <a class="btn b-line" href="tel:+15875758454"><svg class="i"><use href="#phone"/></svg>Call +1 587 575 8454</a>
-    </div>
-    <div class="checks">
-      <span><svg class="i"><use href="#ccheck"/></svg>Trained, insured cleaners</span>
-      <span><svg class="i"><use href="#ccheck"/></svg>Upfront rates, no hidden costs</span>
-      <span><svg class="i"><use href="#ccheck"/></svg>Eco-friendly products</span>
+    <div class="fbox rv">
+      <div>
+        <h5>Haven't ordered our services before?</h5>
+        <h2>Get a $25 Discount on Your First Cleaning</h2>
+        <p>We will contact you to specify the details.</p>
+        <div class="checks">
+          <span><svg class="i"><use href="#ccheck"/></svg>Trained, insured cleaners</span>
+          <span><svg class="i"><use href="#ccheck"/></svg>No hidden costs</span>
+          <span><svg class="i"><use href="#ccheck"/></svg>Eco-friendly products</span>
+        </div>
+      </div>
+      <form class="fform" action="https://www.molclean.ca/book-service" method="get">
+        <input name="name" placeholder="Name" aria-label="Name">
+        <input name="contact" placeholder="Phone number or email" aria-label="Phone number or email">
+        <button class="btn b-ink" type="submit">Get My $25 Off <svg class="i"><use href="#arr"/></svg></button>
+        <div class="or"><a href="tel:+15875758454"><svg class="i"><use href="#phone"/></svg>+1 587 575 8454</a><a href="https://www.molclean.ca/book-service">Book Online</a></div>
+      </form>
     </div>
   </div>
 </section>
@@ -741,6 +829,7 @@ footer a:hover{color:#fff}
 <script>
 // duplicate trust badges for seamless marquee
 const tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
+document.querySelectorAll('.vtab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.vtab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.vp').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById(t.dataset.t).classList.add('on')}));
 // mobile submenus
 document.querySelectorAll('.menu>li>a').forEach(a=>a.addEventListener('click',e=>{if(innerWidth<=1080&&a.nextElementSibling){e.preventDefault();a.parentElement.classList.toggle('x')}}));
 // reviews slider
