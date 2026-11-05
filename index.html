@@ -523,6 +523,29 @@ footer a:hover{color:var(--teal-ink)}
 @media (max-width:620px){.rc{width:290px;padding:20px}.rc p{font-size:14px}.rs>b{font-size:32px}.rrows{gap:12px}.rtrack{gap:12px}}
 @media (prefers-reduced-motion:reduce){.rtrack{animation:none}}
 
+.svc2{background:#fff}
+.ulink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:17px;color:var(--ink);padding-bottom:10px;border-bottom:3px solid var(--sky);transition:gap .2s}
+.ulink:hover{gap:14px}
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.pcard{position:relative;display:block;aspect-ratio:3/4;border-radius:26px;overflow:hidden;background:#e6faf8;isolation:isolate;box-shadow:0 30px 50px -36px rgba(0,0,0,.45)}
+.pcard .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .7s ease;z-index:-2}
+.pcard:hover .bg{transform:scale(1.06)}
+.pcard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,58,54,0) 38%,rgba(6,58,54,.55) 60%,rgba(6,48,45,.94) 100%)}
+.notch{position:absolute;top:0;left:0;background:#fff;padding:14px 18px 14px 16px;border-bottom-right-radius:24px}
+.notch img{height:26px;width:auto;display:block}
+.notch::before,.notch::after{content:"";position:absolute;width:24px;height:24px;background:radial-gradient(circle at 100% 100%,transparent 23.5px,#fff 24px)}
+.notch::before{top:0;right:-24px}
+.notch::after{left:0;bottom:-24px}
+.cnt2{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.92);color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.pcard .txt{position:absolute;left:0;right:0;bottom:0;padding:28px 30px 30px;color:#fff}
+.pcard h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:36px;line-height:.95;margin-bottom:10px}
+.pcard p{font-size:15px;line-height:1.55;color:rgba(255,255,255,.88);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pcard .more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-weight:700;font-size:14.5px;color:var(--sky);transition:gap .2s}
+.pcard:hover .more{gap:14px}
+@media (max-width:1080px){.pcard h3{font-size:30px}.pcard .txt{padding:22px}}
+@media (max-width:860px){.pcards{grid-template-columns:1fr 1fr}.pcards .pcard:last-child{grid-column:1/-1;aspect-ratio:16/10}}
+@media (max-width:620px){.pcards{grid-template-columns:1fr;gap:16px}.pcard,.pcards .pcard:last-child{aspect-ratio:4/5;grid-column:auto}.ulink{font-size:15px}}
+
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.track{animation:none}}
@@ -681,58 +704,31 @@ footer a:hover{color:var(--teal-ink)}
 </section>
 
 <!-- Services -->
-<section class="sec svc" id="services">
+<section class="sec svc2" id="services">
   <div class="wrap">
     <div class="svc-top rv">
-      <div><span class="kick">Our Services</span><h2 class="h2">Our Cleaning <em>Services</em></h2></div>
-      <p class="lead">Whether it's a quick refresh or a deep clean transformation, our expert touch leaves your home or office shining.</p>
+      <div><span class="kick">Our Services</span><h2 class="h2">Our Cleaning <em>Services</em></h2><p class="lead">Whether it's a quick refresh or a deep clean transformation, our expert touch leaves your home or office shining.</p></div>
+      <a class="ulink" href="https://www.molclean.ca/book-service">Get a $25 Off Quote <svg class="i"><use href="#arr"/></svg></a>
     </div>
-    <div class="vt rv">
-      <div class="vt-nav" role="tablist">
-        <button class="vtab on" data-t="t1"><b>Residential &amp; Apartment</b><small>7 services</small></button>
-        <button class="vtab" data-t="t2"><b>Commercial</b><small>14 services</small></button>
-        <button class="vtab" data-t="t3"><b>Specialty</b><small>10 services</small></button>
-        <a class="btn b-sun" href="https://www.molclean.ca/book-service">Get Quote <svg class="i"><use href="#arr"/></svg></a>
-      </div>
-      <div class="vt-body">
-        <div class="vp on" id="t1">
-          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-off-deep-cleaning-services">One Off Deep Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/airbnb-cleaning-services">Airbnb Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/move-in-move-out-cleaning-services">Move In Move Out Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/regular-housekeeping-cleaning-services">Regular Housekeeping Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/condo-apartment-cleaning-services">Condo & Apartment Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/general-house-cleaning">General House Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-time-cleaning">One time Cleaning<svg class="i"><use href="#arr"/></svg></a>
-        </div>
-        <div class="vp" id="t2">
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/office-&-building-cleaning-services">Office and Building Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/financial-institution-and-bank-cleaning-services">Financial Institution & Bank Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/public-and-government-buildings-cleaning">Public and Government Buildings Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/religious-and-cultural-facilities-cleaning">Religious and Cultural Facilities Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/property-&-facility-management-cleaning">Property & Facility Management Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/schools-&-education-building-cleaning-services">Schools & Education Building Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/retail-cleaning-services">Retail Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/spa-&-beauty-salon-cleaning-services">Spa & Beauty Salon Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/gym-&-fitnes-centre-cleaning-services">Gym & Fitness Centre Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/car-dealership-&-automotive-cleaning">Car Dealership & Automotive Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/medical-&-healthcare-facilities-cleaning-services">Medical & Healthcare Facilities Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/Hotel%20&%20Resort%20Housekeeping%20Services">Hotel & Resort Housekeeping Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/commercial-kitchen-&-restaurant-cleaning-services">Commercial Kitchen & Restaurant Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/commercial-cleaning-calgary/recreational-&-leisure-facility-cleaning-services">Recreational & Leisure Facility Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-        </div>
-        <div class="vp" id="t3">
-          <a href="https://www.molclean.ca/services/specialty/pressure-washing">Pressure Washing<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/high-dusting-&-vacuuming">High Dusting & Vacuuming<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/upholstery-cleaning">Upholstery Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/exterior-areas-cleaning">Exterior Areas Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/eco-friendly-cleaning">Eco-Friendly Cleaning<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/window-cleaning-services">Window Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/carpet-cleaning-services">Carpet Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/floor-cleaning-services">Floor Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/certified-cleaning-disinfecting-&-decontaminations">Certified Cleaning, Disinfecting & Decontaminations<svg class="i"><use href="#arr"/></svg></a>
-          <a href="https://www.molclean.ca/services/specialty/post-construction-cleaning-services">Post Construction Cleaning Services<svg class="i"><use href="#arr"/></svg></a>
-        </div>
-      </div>
+    <div class="pcards">
+      <a class="pcard rv" href="https://www.molclean.ca/services/residential-&-apartment">
+        <img class="bg" src="https://www.molclean.ca/uploads/topics/17613565573874.webp" alt="Residential & Apartment cleaning in Calgary">
+        <span class="notch"><img src="https://www.molclean.ca/uploads/settings/17491217057929.svg" alt="MOLCLEAN"></span>
+        <span class="cnt2">7 services</span>
+        <div class="txt"><h3>Residential &amp; Apartment</h3><p>Reliable residential and apartment cleaning services in Calgary. MOLCLEAN offers spotless results with flexible scheduling and eco-friendly products.</p><span class="more">Explore Residential services <svg class="i"><use href="#arr"/></svg></span></div>
+      </a>
+      <a class="pcard rv" href="https://www.molclean.ca/services/commercial">
+        <img class="bg" src="https://www.molclean.ca/uploads/topics/17613533338635.webp" alt="Commercial cleaning in Calgary">
+        <span class="notch"><img src="https://www.molclean.ca/uploads/settings/17491217057929.svg" alt="MOLCLEAN"></span>
+        <span class="cnt2">14 services</span>
+        <div class="txt"><h3>Commercial</h3><p>Top-rated commercial cleaning services in Calgary, Alberta. MOLCLEAN provides professional office, retail, and industrial cleaning tailored to your business needs.</p><span class="more">Explore Commercial services <svg class="i"><use href="#arr"/></svg></span></div>
+      </a>
+      <a class="pcard rv" href="https://www.molclean.ca/services/specialty">
+        <img class="bg" src="https://www.molclean.ca/uploads/topics/17425737639302.jpg" alt="Specialty cleaning in Calgary">
+        <span class="notch"><img src="https://www.molclean.ca/uploads/settings/17491217057929.svg" alt="MOLCLEAN"></span>
+        <span class="cnt2">10 services</span>
+        <div class="txt"><h3>Specialty</h3><p>Professional specialty cleaning services in Calgary. From deep cleaning to move-out and disinfection, MOLCLEAN ensures spotless results every time.</p><span class="more">Explore Specialty services <svg class="i"><use href="#arr"/></svg></span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -915,7 +911,7 @@ footer a:hover{color:var(--teal-ink)}
 <script>
 // duplicate trust badges for seamless marquee
 const tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
-document.querySelectorAll('.vtab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.vtab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.vp').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById(t.dataset.t).classList.add('on')}));
+
 // mobile submenus
 document.querySelectorAll('.menu>li>a').forEach(a=>a.addEventListener('click',e=>{if(innerWidth<=1080&&a.nextElementSibling){e.preventDefault();a.parentElement.classList.toggle('x')}}));
 // video
