@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOLCLEAN | House & Commercial Cleaning in Calgary</title>
+<meta name="description" content="We are a team of passionate cleaning experts who take pride in delivering the highest standard of service. With years of experience in the industry, we've perfected our cleaning methods.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky:#48b1fb; --sky-rgb:72,177,251;
+  --navy:#0A3F87; --ink:#0b2346; --sun:#FEE74A;
+  --paper:#ffffff; --mist:#f2f8fe; --line:#dce9f6;
+  --text:#4a5a70; --head:#0b2346;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Open Sans",Helvetica,Arial,sans-serif;color:var(--text);background:var(--paper);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:"Quicksand",Helvetica,Arial,sans-serif;color:var(--head);line-height:1.15;font-weight:700}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-sun{background:var(--sun);color:var(--ink);box-shadow:0 10px 24px -10px rgba(254,231,74,.9)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--ink)}
+.btn-ghost{background:transparent;color:var(--navy);border:2px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sky)}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+svg.i{width:18px;height:18px;flex:none}
+
+/* Top bar */
+.topbar{background:var(--ink);color:#cfe3f7;font-size:13.5px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:42px;flex-wrap:wrap}
+.topbar .l{display:flex;gap:22px;flex-wrap:wrap}
+.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar .offer{background:var(--sun);color:var(--ink);font-weight:700;padding:4px 12px;border-radius:999px}
+.socials{display:flex;gap:6px}
+.socials a{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);transition:background .2s}
+.socials a:hover{background:var(--sky)}
+.socials svg{width:14px;height:14px;fill:#fff}
+
+/* Header */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.logo img{height:52px;width:auto}
+.menu{display:flex;gap:4px;list-style:none}
+.menu>li{position:relative}
+.menu>li>a{display:flex;align-items:center;gap:6px;padding:10px 14px;font-weight:600;font-size:15px;color:var(--head);border-radius:10px}
+.menu>li>a:hover{background:var(--mist);color:var(--navy)}
+.menu .dd{position:absolute;top:100%;left:0;min-width:330px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 24px 50px -20px rgba(11,35,70,.3);padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);transition:.2s;list-style:none;max-height:70vh;overflow:auto}
+.menu>li:hover .dd{opacity:1;visibility:visible;transform:none}
+.dd a{display:block;padding:8px 12px;font-size:14px;border-radius:8px}
+.dd a:hover{background:var(--mist);color:var(--navy)}
+.nav-cta{display:flex;align-items:center;gap:18px}
+.phone{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy)}
+.phone .ic{width:42px;height:42px;border-radius:50%;background:var(--mist);display:grid;place-items:center;color:var(--sky)}
+.phone small{display:block;font-weight:500;font-size:12px;color:var(--text)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--mist)}
+.hero-media{position:absolute;inset:0 0 0 46%;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%)}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,63,135,.55),rgba(10,63,135,.05) 60%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:84px}
+.hero h1{font-size:clamp(38px,5.2vw,64px);letter-spacing:-.02em;margin:18px 0 20px}
+.hero h1 em{font-style:normal;color:var(--sky);position:relative}
+.hero p.lead{font-size:18px;max-width:520px;margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.reviews{margin-top:34px;display:flex;align-items:center;gap:16px}
+.reviews img{height:54px;width:auto;background:#fff;border-radius:12px;padding:6px 10px;box-shadow:0 8px 20px -12px rgba(11,35,70,.35)}
+.reviews small{font-size:13.5px;max-width:200px}
+
+.quote{background:#fff;border-radius:22px;padding:30px;box-shadow:0 40px 70px -30px rgba(11,35,70,.55);position:relative;justify-self:end;width:100%;max-width:450px}
+.quote .tag{position:absolute;top:-16px;right:24px;background:var(--sun);color:var(--ink);font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px;transform:rotate(3deg)}
+.quote h2{font-size:23px;margin-bottom:6px}
+.quote p{font-size:14px;margin-bottom:18px}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.f-grid .full{grid-column:1/-1}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:12.5px;font-weight:700;color:var(--head)}
+.field input,.field select,.field textarea{font:inherit;font-size:14.5px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fbfdff;color:var(--head);outline:none;transition:border .2s,box-shadow .2s}
+.field textarea{min-height:78px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(var(--sky-rgb),.15)}
+.quote .btn{width:100%;justify-content:center;margin-top:16px}
+
+/* Services explorer */
+.services{padding:110px 0 100px}
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:46px}
+.svc-head h2{font-size:clamp(32px,4vw,48px);margin-top:14px}
+.svc-head p{font-size:17px}
+.tabs{display:flex;gap:8px;background:var(--mist);padding:6px;border-radius:999px;width:max-content;max-width:100%;overflow-x:auto;margin-bottom:28px}
+.tab{border:0;background:none;font:inherit;font-weight:700;font-size:15px;padding:12px 22px;border-radius:999px;cursor:pointer;color:var(--text);white-space:nowrap}
+.tab.on{background:var(--navy);color:#fff}
+.panel{display:none;grid-template-columns:.85fr 1.15fr;gap:28px}
+.panel.on{display:grid;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel-intro{background:var(--navy);color:#d6e7fa;border-radius:22px;padding:38px;position:relative;overflow:hidden}
+.panel-intro::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;border:40px solid rgba(var(--sky-rgb),.25);right:-80px;bottom:-80px}
+.panel-intro h3{color:#fff;font-size:30px;margin-bottom:12px}
+.panel-intro .count{font-family:Quicksand;font-size:84px;font-weight:700;color:var(--sun);line-height:1}
+.panel-intro .btn{margin-top:26px;position:relative;z-index:1}
+.svc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:start}
+.svc-list a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border:1.5px solid var(--line);border-radius:12px;font-weight:600;color:var(--head);font-size:15px;transition:.2s;height:100%}
+.svc-list a:hover{border-color:var(--sky);background:var(--mist);color:var(--navy)}
+.svc-list a svg{color:var(--sky);transition:transform .2s}
+.svc-list a:hover svg{transform:translateX(4px)}
+
+/* About */
+.about{background:linear-gradient(180deg,var(--mist),#fff);padding:110px 0}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;gap:16px;position:relative}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.m1{grid-row:1/3;border-radius:22px 22px 22px 90px}
+.m2{border-radius:50%;aspect-ratio:1;height:auto!important;align-self:center;justify-self:center;width:88%!important;border:8px solid #fff;box-shadow:0 20px 40px -20px rgba(11,35,70,.4)}
+.m3{grid-row:2/4;border-radius:90px 22px 22px 22px}
+.m4{border-radius:22px;clip-path:polygon(0 0,100% 0,100% 78%,82% 100%,0 100%)}
+.badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--sun);color:var(--ink);width:118px;height:118px;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:Quicksand;font-weight:700;font-size:14px;line-height:1.2;border:6px solid #fff;box-shadow:0 14px 30px -12px rgba(11,35,70,.4)}
+.about h2{font-size:clamp(30px,3.6vw,44px);margin:14px 0 18px}
+.about p{margin-bottom:16px}
+.why{margin:26px 0;border-left:3px solid var(--sky);padding-left:22px}
+.why h4{font-size:19px;margin-bottom:10px}
+.why li{list-style:none;margin-bottom:10px}
+.why b{color:var(--head)}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.feat{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.feat img{width:46px;height:46px;object-fit:contain;flex:none}
+.feat h5{font-size:16px;margin-bottom:3px}
+.feat p{font-size:13.5px;line-height:1.5;margin:0}
+
+/* Pricing */
+.pricing{background:var(--ink);color:#c5d8ee;padding:110px 0;position:relative;overflow:hidden}
+.pricing::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 0%,rgba(var(--sky-rgb),.28),transparent 70%),radial-gradient(500px 300px at 0% 100%,rgba(254,231,74,.12),transparent 70%)}
+.pricing .wrap{position:relative}
+.pr-head{text-align:center;max-width:680px;margin:0 auto 54px}
+.pr-head .eyebrow{color:var(--sun)}
+.pr-head h2{color:#fff;font-size:clamp(32px,4vw,48px);margin:14px 0}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column;position:relative}
+.plan h5{color:#fff;font-size:18px;min-height:44px}
+.plan .price{display:flex;align-items:flex-start;gap:4px;color:#fff;margin:18px 0 6px;font-family:Quicksand;font-weight:700}
+.plan .price sup{font-size:26px;margin-top:10px}
+.plan .price b{font-size:76px;line-height:1}
+.plan .per{font-size:14px;margin-bottom:28px;padding-bottom:24px;border-bottom:1px dashed rgba(255,255,255,.2)}
+.plan .btn{margin-top:auto;justify-content:center}
+.plan.hot{background:var(--sky);border-color:var(--sky);transform:translateY(-14px)}
+.plan.hot h5,.plan.hot .price{color:var(--ink)}
+.plan.hot .per{color:var(--ink);border-color:rgba(11,35,70,.25)}
+.plan.hot .btn{background:var(--ink);color:#fff}
+.plan .btn-ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+
+/* Video + question */
+.media{padding:110px 0}
+.media .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:30px}
+.video{position:relative;border-radius:22px;overflow:hidden;min-height:400px;background:#000;cursor:pointer;clip-path:polygon(0 0,100% 0,100% 100%,7% 100%,0 86%)}
+.video img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s}
+.video:hover img{transform:scale(1.04)}
+.video .play{position:absolute;inset:0;display:grid;place-items:center}
+.video .play span{width:92px;height:92px;border-radius:50%;background:var(--sun);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(254,231,74,.3);transition:box-shadow .3s}
+.video:hover .play span{box-shadow:0 0 0 22px rgba(254,231,74,.25)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ask{background:var(--mist);border-radius:22px;padding:34px;display:flex;flex-direction:column}
+.ask h3{font-size:28px;margin-bottom:18px}
+.ask .field{margin-bottom:12px}
+.ask .btn{margin-top:auto;justify-content:center}
+
+/* Discount */
+.discount{padding:0 0 110px}
+.disc-box{background:var(--sun);border-radius:28px;padding:50px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.disc-box::after{content:"$25";position:absolute;right:-20px;bottom:-70px;font-family:Quicksand;font-weight:700;font-size:260px;color:rgba(11,35,70,.07);line-height:1}
+.disc-box h5{font-size:15px;color:var(--navy);font-weight:700;margin-bottom:8px}
+.disc-box h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:10px}
+.disc-box h6{font-size:15px;font-weight:600;color:var(--ink);font-family:"Open Sans"}
+.disc-form{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;position:relative;z-index:1;align-items:end}
+.disc-form .field label{color:var(--ink)}
+.disc-form .field input{background:#fff;border-color:#fff}
+
+/* Footer */
+footer{background:var(--ink);color:#9fb6d1;padding:80px 0 0;font-size:14.5px}
+.f-top{display:grid;grid-template-columns:1.3fr 1.2fr 1fr 1fr .9fr;gap:36px}
+.f-logo{background:#fff;display:inline-block;padding:12px 16px;border-radius:14px;margin-bottom:18px}
+.f-logo img{height:44px;width:auto}
+footer h4{color:#fff;font-size:17px;margin-bottom:16px}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer li a:hover,.f-contact a:hover{color:var(--sun)}
+.f-contact div{margin-bottom:16px}
+.f-contact b{display:block;color:#fff;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.f-bot{border-top:1px solid rgba(255,255,255,.1);margin-top:56px;padding:22px 0 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px}
+.f-bot a{color:#fff}
+.f-bot a:hover{color:var(--sun)}
+.f-bot .links{display:flex;gap:18px}
+
+/* Mobile action bar */
+.mbar{display:none}
+
+/* Responsive */
+@media (max-width:1100px){
+  .menu,.phone small,.phone div{display:none}
+  .burger{display:block}
+  .menu.open{display:flex;position:absolute;top:84px;left:0;right:0;flex-direction:column;background:#fff;padding:14px 20px 20px;border-bottom:1px solid var(--line);max-height:80vh;overflow:auto}
+  .menu.open .dd{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;display:none;padding:0 0 0 10px;min-width:0}
+  .menu.open li.x .dd{display:block}
+  .f-top{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:900px){
+  .hero-media{inset:0;clip-path:none}
+  .hero-media::after{background:linear-gradient(180deg,rgba(11,35,70,.82),rgba(11,35,70,.6))}
+  .hero .wrap{grid-template-columns:1fr;padding-top:56px}
+  .hero h1,.hero h1 em{color:#fff}
+  .hero h1 em{color:var(--sun)}
+  .hero p.lead,.reviews small{color:#e3eefb}
+  .hero .eyebrow{color:var(--sun)}
+  .hero .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+  .quote{justify-self:stretch;max-width:none}
+  .svc-head,.about .wrap,.media .wrap,.disc-box{grid-template-columns:1fr}
+  .panel{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .plan.hot{transform:none}
+  .mosaic{grid-template-rows:160px 160px 160px}
+  .disc-form{grid-template-columns:1fr}
+  .disc-box{padding:34px 26px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .topbar .l span:not(.offer){display:none}
+  .topbar .socials{display:none}
+  .svc-list,.feats,.f-grid{grid-template-columns:1fr}
+  .f-top{grid-template-columns:1fr 1fr}
+  .f-top>div:first-child{grid-column:1/-1}
+  .services,.about,.pricing,.media{padding:76px 0}
+  .discount{padding-bottom:76px}
+  .video{min-height:240px}
+  .mbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--ink)}
+  .mbar a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 0;color:#fff;font-size:11.5px;font-weight:600}
+  .mbar a:first-child{background:var(--sky);color:var(--ink)}
+  .mbar svg{width:20px;height:20px}
+  footer{padding-bottom:64px}
+  .logo img{height:42px}
+  .nav-cta .btn{padding:12px 18px;font-size:14px}
+}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="l">
+      <span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>We're Open: Mon to Sun 8 am - 6 pm</span>
+      <span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>81 Legacy Blvd SE, Calgary AB</span>
+      <a class="offer" href="https://www.molclean.ca/book-service">$25 Off Quote</a>
+    </div>
+    <div class="socials">
+      <a href="https://www.facebook.com/molclean.ca" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a>
+      <a href="https://x.com/molclean" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.5 3h3.3l-7.2 8.3L22 21h-6.6l-5.2-6.8L4.3 21H1l7.7-8.8L.6 3h6.8l4.7 6.2L17.5 3z"/></svg></a>
+      <a href="https://www.linkedin.com/company/molclean/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.5 8h3.8v12H4.5zM6.4 2.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4zM10.4 8H14v1.7c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V20h-3.8v-5.6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V20h-3.8z"/></svg></a>
+      <a href="https://www.youtube.com/@MOLCLEAN" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg></a>
+      <a href="https://instagram.com/molclean.ca" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-2.7 0-3 0-4 .1-4 .2-5.6 1.8-5.8 5.8-.1 1-.1 1.3-.1 3.9s0 3 .1 4c.2 4 1.8 5.6 5.8 5.8 1 .1 1.3.1 4 .1s3 0 4-.1c4-.2 5.6-1.8 5.8-5.8.1-1 .1-1.3.1-4s0-2.9-.1-3.9c-.2-4-1.8-5.6-5.8-5.8-1-.1-1.3-.1-4-.1z"/></svg></a>
+      <a href="https://www.tiktok.com/@molclean.ca" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2-2.8V9.1a6.3 6.3 0 1 0 5.4 6.3V8.6a7.6 7.6 0 0 0 4.4 1.4V6.6A4.4 4.4 0 0 1 16.6 2z"/></svg></a>
+      <a href="https://www.threads.com/@molclean.ca" aria-label="Threads"><svg viewBox="0 0 24 24"><path d="M17 11.2c-.1 0-.2-.1-.3-.1-.2-3-1.8-4.7-4.6-4.7-1.7 0-3 .7-3.9 2l1.5 1c.6-.9 1.6-1.1 2.4-1.1 1 0 1.7.3 2.1.8.3.4.5.9.6 1.5-.8-.1-1.7-.2-2.6-.1-2.6.1-4.3 1.7-4.2 3.8.1 1.1.6 2 1.5 2.6.8.5 1.8.7 2.8.7 1.4-.1 2.5-.6 3.2-1.6.6-.8.9-1.7 1-2.9.7.4 1.2.9 1.5 1.6.5 1.1.5 2.9-1 4.4-1.3 1.3-2.9 1.9-5.3 1.9-2.7 0-4.7-.9-6-2.6C4.5 16.8 3.9 14.700 3.9 12s.6-4.8 1.8-6.4C7 3.9 9 3 11.7 3c2.7 0 4.8.9 6.2 2.6.7.8 1.2 1.9 1.5 3.1l1.8-.5c-.4-1.5-1-2.8-1.9-3.9C17.500 2.200 15 1.100 11.700 1.100 8.400 1.100 5.900 2.200 4.200 4.300 2.700 6.200 2 8.800 2 12s.7 5.800 2.200 7.700C5.900 21.800 8.400 22.900 11.700 22.900c2.900 0 4.900-.8 6.600-2.400 2.200-2.200 2.100-4.900 1.400-6.600-.5-1.200-1.500-2.100-2.700-2.700zm-4.600 4.300c-1.100.1-2.300-.4-2.300-1.500 0-.8.600-1.700 2.400-1.800h.6c.6 0 1.300.1 1.800.2-.2 2.600-1.400 3-2.500 3.100z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="https://www.molclean.ca"><img src="https://www.molclean.ca/uploads/settings/17491217057929.svg" alt="MOLCLEAN"></a>
+    <ul class="menu" id="menu">
+      <li><a href="https://www.molclean.ca/services/commercial">Commercial <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:13px"><path d="m6 9 6 6 6-6"/></svg></a>
+        <ul class="dd">
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/office-&-building-cleaning-services">Office and Building Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/financial-institution-and-bank-cleaning-services">Financial Institution & Bank Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/public-and-government-buildings-cleaning">Public and Government Buildings Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/religious-and-cultural-facilities-cleaning">Religious and Cultural Facilities Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/property-&-facility-management-cleaning">Property & Facility Management Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/schools-&-education-building-cleaning-services">Schools & Education Building Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/retail-cleaning-services">Retail Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/spa-&-beauty-salon-cleaning-services">Spa & Beauty Salon Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/gym-&-fitnes-centre-cleaning-services">Gym & Fitness Centre Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/car-dealership-&-automotive-cleaning">Car Dealership & Automotive Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/medical-&-healthcare-facilities-cleaning-services">Medical & Healthcare Facilities Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/Hotel%20&%20Resort%20Housekeeping%20Services">Hotel & Resort Housekeeping Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/commercial-kitchen-&-restaurant-cleaning-services">Commercial Kitchen & Restaurant Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/recreational-&-leisure-facility-cleaning-services">Recreational & Leisure Facility Cleaning Services</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.molclean.ca/services/residential-&-apartment">Residential & Apartment <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:13px"><path d="m6 9 6 6 6-6"/></svg></a>
+        <ul class="dd">
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-off-deep-cleaning-services">One Off Deep Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/airbnb-cleaning-services">Airbnb Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/move-in-move-out-cleaning-services">Move In Move Out Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/regular-housekeeping-cleaning-services">Regular Housekeeping Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/condo-apartment-cleaning-services">Condo & Apartment Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/general-house-cleaning">General House Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-time-cleaning">One time Cleaning</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.molclean.ca/services/specialty">Specialty <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:13px"><path d="m6 9 6 6 6-6"/></svg></a>
+        <ul class="dd">
+          <li><a href="https://www.molclean.ca/services/specialty/pressure-washing">Pressure Washing</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/high-dusting-&-vacuuming">High Dusting & Vacuuming</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/upholstery-cleaning">Upholstery Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/exterior-areas-cleaning">Exterior Areas Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/eco-friendly-cleaning">Eco-Friendly Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/window-cleaning-services">Window Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/carpet-cleaning-services">Carpet Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/floor-cleaning-services">Floor Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/certified-cleaning-disinfecting-&-decontaminations">Certified Cleaning, Disinfecting & Decontaminations</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/post-construction-cleaning-services">Post Construction Cleaning Services</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.molclean.ca/about-us">About us <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="width:13px"><path d="m6 9 6 6 6-6"/></svg></a>
+        <ul class="dd" style="min-width:200px">
+          <li><a href="https://www.molclean.ca/how-it-works">How It Works</a></li>
+          <li><a href="https://www.molclean.ca/projects">Projects</a></li>
+          <li><a href="https://www.molclean.ca/blog">Blog</a></li>
+          <li><a href="https://www.molclean.ca/contact">Contact Us</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-cta">
+      <a class="phone" href="tel:+15875758454"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Need Help?</small>+1 587 575 8454</div></a>
+      <a class="btn btn-sun" href="https://www.molclean.ca/book-service">Get Quote</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-media"><img src="https://www.molclean.ca/uploads/topics/17630417038625.webp" alt="House & Commercial Cleaning in Calgary"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Cleaning services in Calgary</span>
+      <h1>House &amp; Commercial <em>Cleaning</em> in Calgary</h1>
+      <p class="lead">Trusted home cleaning in Calgary. Experienced cleaners, flexible scheduling, eco-friendly products, and spotless results.</p>
+      <div class="hero-actions">
+        <a class="btn btn-navy" href="https://www.molclean.ca/book-service">Click to get a Quote Instantly! <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="tel:+15875758454">+1 587 575 8454</a>
+      </div>
+      <div class="reviews">
+        <img src="https://www.molclean.ca/assets/frontend/images/google-reviews.webp" alt="Google Reviews">
+        <small>Trusted by Hundreds of Clients across Calgary</small>
+      </div>
+    </div>
+    <form class="quote" action="https://www.molclean.ca/book-service" method="get">
+      <span class="tag">Save $25</span>
+      <h2>Request a Quote &amp; Save $25 on Your First Cleaning!</h2>
+      <p>We will contact you to specify the details.</p>
+      <div class="f-grid">
+        <div class="field"><label for="q-name">Name</label><input id="q-name" name="name" required></div>
+        <div class="field"><label for="q-phone">Phone</label><input id="q-phone" name="phone" type="tel" required></div>
+        <div class="field full"><label for="q-email">Email Address</label><input id="q-email" name="email" type="email"></div>
+        <div class="field full"><label for="q-type">Type of Service</label>
+          <select id="q-type" name="service">
+            <option>House cleaning</option><option>Apartment cleaning</option><option>Move-in/out cleaning</option><option>Post construction cleaning</option><option>Airbnb cleaning</option><option>Deep cleaning</option><option>Upholstery cleaning</option><option>Carpet cleaning</option><option>Office cleaning</option><option>Other cleaning</option>
+          </select>
+        </div>
+        <div class="field full"><label for="q-msg">Other details</label><textarea id="q-msg" name="details"></textarea></div>
+      </div>
+      <button class="btn btn-sun" type="submit">Get My $25 Off Quote</button>
+    </form>
+  </div>
+</section>
+
+<!-- Services explorer -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <div><span class="eyebrow">Our Services</span><h2>Our Cleaning Services</h2></div>
+      <p>Whether it's a quick refresh or a deep clean transformation, our expert touch leaves your home or office shining.</p>
+    </div>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab on" data-t="p1">Commercial</button>
+      <button class="tab" data-t="p2">Residential &amp; Apartment</button>
+      <button class="tab" data-t="p3">Specialty</button>
+    </div>
+
+    <div class="panel on" id="p1">
+      <div class="panel-intro">
+        <div class="count">14</div>
+        <h3>Commercial</h3>
+        <p>Office and Building Cleaning, Janitorial Services, Day Porter Commercial Cleaning Services, Small Office and Studios.</p>
+        <a class="btn btn-sun" href="https://www.molclean.ca/services/commercial">View Commercial</a>
+      </div>
+      <ul class="svc-list">
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/office-&-building-cleaning-services">Office and Building Cleaning Services<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/financial-institution-and-bank-cleaning-services">Financial Institution & Bank Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/public-and-government-buildings-cleaning">Public and Government Buildings<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/religious-and-cultural-facilities-cleaning">Religious and Cultural Facilities<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/property-&-facility-management-cleaning">Property & Facility Management<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/schools-&-education-building-cleaning-services">Schools & Education Buildings<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/retail-cleaning-services">Retail Cleaning Services<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/spa-&-beauty-salon-cleaning-services">Spa & Beauty Salon Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/gym-&-fitnes-centre-cleaning-services">Gym & Fitness Centre Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/car-dealership-&-automotive-cleaning">Car Dealership & Automotive<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/medical-&-healthcare-facilities-cleaning-services">Medical & Healthcare Facilities<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/Hotel%20&%20Resort%20Housekeeping%20Services">Hotel & Resort Housekeeping<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/commercial-kitchen-&-restaurant-cleaning-services">Commercial Kitchen & Restaurant<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/recreational-&-leisure-facility-cleaning-services">Recreational & Leisure Facilities<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+
+    <div class="panel" id="p2">
+      <div class="panel-intro">
+        <div class="count">07</div>
+        <h3>Residential &amp; Apartment</h3>
+        <p>Trusted home cleaning in Calgary. Experienced cleaners, flexible scheduling, eco-friendly products, and spotless results.</p>
+        <a class="btn btn-sun" href="https://www.molclean.ca/services/residential-&-apartment">View Residential</a>
+      </div>
+      <ul class="svc-list">
+        <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/general-house-cleaning">General House Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/regular-housekeeping-cleaning-services">Regular Housekeeping Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-off-deep-cleaning-services">One Off Deep Cleaning Services<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/move-in-move-out-cleaning-services">Move In Move Out Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/condo-apartment-cleaning-services">Condo & Apartment Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/airbnb-cleaning-services">Airbnb Cleaning Services<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-time-cleaning">One time Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+
+    <div class="panel" id="p3">
+      <div class="panel-intro">
+        <div class="count">11</div>
+        <h3>Specialty</h3>
+        <p>From carpet and upholstery to post construction cleanups, specialist cleaning that goes beyond the routine.</p>
+        <a class="btn btn-sun" href="https://www.molclean.ca/services/specialty">View Specialty</a>
+      </div>
+      <ul class="svc-list">
+        <li><a href="https://www.molclean.ca/services/specialty/carpet-and-upholstery-cleaning">Carpet and Upholstery Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/post-construction-cleaning-services">Post Construction Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/certified-cleaning-disinfecting-&-decontaminations">Certified Cleaning, Disinfecting & Decontaminations<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/pressure-washing">Pressure Washing<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/window-cleaning-services">Window Cleaning Services<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/carpet-cleaning-services">Carpet Cleaning Services<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/upholstery-cleaning">Upholstery Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/floor-cleaning-services">Floor Cleaning Services<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/high-dusting-&-vacuuming">High Dusting & Vacuuming<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/exterior-areas-cleaning">Exterior Areas Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        <li><a href="https://www.molclean.ca/services/specialty/eco-friendly-cleaning">Eco-Friendly Cleaning<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="mosaic reveal">
+      <img class="m1" src="https://www.molclean.ca/uploads/topics/17412735517932.webp" alt="Bringing Clean, Comfort, and Care Together">
+      <img class="m2" src="https://www.molclean.ca/uploads/topics/17412735822997.webp" alt="Bringing Clean, Comfort, and Care Together">
+      <img class="m3" src="https://www.molclean.ca/uploads/topics/17412736008198.webp" alt="Bringing Clean, Comfort, and Care Together">
+      <img class="m4" src="https://www.molclean.ca/uploads/topics/17412736279138.webp" alt="Bringing Clean, Comfort, and Care Together">
+      <div class="badge">Residential<br>&amp;<br>Commercial</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">About MolClean</span>
+      <h2>Bringing Clean, Comfort, and Care Together</h2>
+      <p>MolClean has a reputation for professionalism, quality, and trustworthiness. We specialize in both, residential and commercial cleaning, bringing unparalleled expertise to every job. Whether it's a routine cleaning, a detailed deep clean, or a post-construction cleanup, our team delivers meticulous service that consistently exceeds expectations.</p>
+      <p>Our mission is simple: to provide exceptional, reliable cleaning services that leave your space spotless and refreshed. Our professional team uses advanced cleaning methods and eco-friendly products to ensure we not only clean, but also contribute to the health and well-being of our clients.</p>
+      <div class="why">
+        <h4>Why to Choose Us?</h4>
+        <ul>
+          <li><b>Experienced Professionals:</b> We know how to handle even the toughest cleaning challenges.</li>
+          <li><b>Trusted by Hundreds of Clients:</b> We've built lasting relationships with clients who return to us for all their cleaning needs.</li>
+          <li><b>Tailored Services:</b> Every client is unique, and we offer customized cleaning schedules and services to fit your needs.</li>
+        </ul>
+      </div>
+      <div class="feats">
+        <div class="feat"><img src="https://www.molclean.ca/uploads/topics/17412665358423.webp" alt=""><div><h5>Professional Team</h5><p>Our trained, insured cleaners ensure professional, trusted service and impeccable results.</p></div></div>
+        <div class="feat"><img src="https://www.molclean.ca/uploads/topics/17412666262629.webp" alt=""><div><h5>Transparent Pricing</h5><p>Affordable, upfront rates with no hidden costs. Quality cleaning at the right price.</p></div></div>
+        <div class="feat"><img src="https://www.molclean.ca/uploads/topics/17412665876065.webp" alt=""><div><h5>On Time Service</h5><p>Reliable, punctual service that respects your schedule and exceeds expectations.</p></div></div>
+        <div class="feat"><img src="https://www.molclean.ca/uploads/topics/17412666564311.webp" alt=""><div><h5>Eco Friendly</h5><p>We use non-toxic, eco-friendly products for a safe, healthy, and sparkling environment.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="pr-head reveal">
+      <span class="eyebrow">Complete Solutions</span>
+      <h2>Pricing Plans</h2>
+      <p>Choose from flexible, affordable cleaning plans designed to fit your needs, from one-time deep cleans to regular maintenance services.</p>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <h5>One Time or Monthly</h5>
+        <div class="price"><sup>$</sup><b>49</b></div>
+        <div class="per">/Hour/Cleaner</div>
+        <a class="btn btn-ghost" href="https://www.molclean.ca/book-service">Book Now</a>
+      </div>
+      <div class="plan hot reveal">
+        <h5>Recurring (Weekly, Biweekly)</h5>
+        <div class="price"><sup>$</sup><b>43</b></div>
+        <div class="per">/Hour/Cleaner</div>
+        <a class="btn" href="https://www.molclean.ca/book-service">Book Now</a>
+      </div>
+      <div class="plan reveal">
+        <h5>Office &amp; Commercial</h5>
+        <div class="price"><sup>$</sup><b>40</b></div>
+        <div class="per">/Hour/Cleaner</div>
+        <a class="btn btn-ghost" href="https://www.molclean.ca/book-service">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video + Question -->
+<section class="media">
+  <div class="wrap">
+    <div class="video reveal" id="video" role="button" aria-label="Play MOLCLEAN video">
+      <img src="https://img.youtube.com/vi/AkSwAc7ApNc/hqdefault.jpg" alt="MOLCLEAN video">
+      <div class="play"><span><svg width="30" height="30" viewBox="0 0 24 24" fill="#0b2346"><path d="M7 4v16l13-8z"/></svg></span></div>
+    </div>
+    <form class="ask reveal" action="https://www.molclean.ca/contact" method="get">
+      <h3>Do you have any question?</h3>
+      <div class="field"><label for="a-name">Name</label><input id="a-name" name="name"></div>
+      <div class="field"><label for="a-email">Email Address</label><input id="a-email" name="email" type="email"></div>
+      <div class="field"><label for="a-msg">Message</label><textarea id="a-msg" name="message"></textarea></div>
+      <button class="btn btn-navy" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Discount -->
+<section class="discount">
+  <div class="wrap">
+    <div class="disc-box reveal">
+      <div>
+        <h5>Haven't ordered our services before?</h5>
+        <h2>Get a $25 discount on your first cleaning</h2>
+        <h6>We will contact you to specify the details.</h6>
+      </div>
+      <form class="disc-form" action="https://www.molclean.ca/book-service" method="get">
+        <div class="field"><label for="d-name">Name</label><input id="d-name" name="name"></div>
+        <div class="field"><label for="d-contact">Phone number or email</label><input id="d-contact" name="contact"></div>
+        <button class="btn btn-navy" type="submit">Claim $25</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a class="f-logo" href="https://www.molclean.ca"><img src="https://www.molclean.ca/uploads/settings/17491217057929.svg" alt="MOLCLEAN"></a>
+        <p>We are a team of passionate cleaning experts who take pride in delivering the highest standard of service. With years of experience in the industry, we've perfected our cleaning methods.</p>
+        <div class="f-contact" style="margin-top:22px">
+          <div><b>We're Open</b>Mon to Sun 8 am - 6 pm</div>
+          <div><b>Address</b>81 Legacy Blvd SE, Calgary AB, T2X 2B9</div>
+          <div><b>Send a Message</b><a href="mailto:info@molclean.ca">info@molclean.ca</a></div>
+          <div><b>Call</b><a href="tel:+15875758454">+1 587 575 8454</a></div>
+        </div>
+      </div>
+      <div>
+        <h4>Commercial</h4>
+        <ul>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/office-&-building-cleaning-services">Office and Building Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/financial-institution-and-bank-cleaning-services">Financial Institution & Bank</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/public-and-government-buildings-cleaning">Public and Government Buildings</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/property-&-facility-management-cleaning">Property & Facility Management</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/schools-&-education-building-cleaning-services">Schools & Education Buildings</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/medical-&-healthcare-facilities-cleaning-services">Medical & Healthcare Facilities</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial-cleaning-calgary/retail-cleaning-services">Retail Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/commercial">View all Commercial</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Residential &amp; Apartment</h4>
+        <ul>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/general-house-cleaning">General House Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/condo-apartment-cleaning-services">Condo & Apartment Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/move-in-move-out-cleaning-services">Move In Move Out Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/airbnb-cleaning-services">Airbnb Cleaning Services</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/one-off-deep-cleaning-services">One Off Deep Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/residential-&-apartment-cleaning/regular-housekeeping-cleaning-services">Regular Housekeeping</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Specialty</h4>
+        <ul>
+          <li><a href="https://www.molclean.ca/services/specialty/pressure-washing">Pressure Washing</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/window-cleaning-services">Window Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/carpet-cleaning-services">Carpet Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/upholstery-cleaning">Upholstery Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/floor-cleaning-services">Floor Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/post-construction-cleaning-services">Post Construction Cleaning</a></li>
+          <li><a href="https://www.molclean.ca/services/specialty/eco-friendly-cleaning">Eco-Friendly Cleaning</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://www.molclean.ca/about-us">About Us</a></li>
+          <li><a href="https://www.molclean.ca/how-it-works">How It Works</a></li>
+          <li><a href="https://www.molclean.ca/projects">Projects</a></li>
+          <li><a href="https://www.molclean.ca/blog">Blog</a></li>
+          <li><a href="https://www.molclean.ca/book-service">Book Service</a></li>
+          <li><a href="https://www.molclean.ca/business-license">Business License</a></li>
+          <li><a href="https://www.molclean.ca/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 All Rights Reserved by MOLCLEAN. Design by <a href="https://cleanningdigital.com" target="_blank" rel="noopener">Cleaning Digital.</a></span>
+      <div class="links"><a href="https://www.molclean.ca/terms">Terms &amp; Conditions</a><a href="https://www.molclean.ca/privacy">Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile action bar -->
+<nav class="mbar">
+  <a href="tel:+15875758454"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Phone</a>
+  <a href="sms:+15875758454"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>SMS</a>
+  <a href="https://instagram.com/molclean.ca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Instagram</a>
+  <a href="http://m.me/molclean.ca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3C7 3 3 6.7 3 11.3c0 2.6 1.3 4.9 3.3 6.4V21l3-1.7c.9.3 1.8.4 2.7.4 5 0 9-3.7 9-8.4S17 3 12 3z"/></svg>Facebook</a>
+</nav>
+
+<script>
+// Tabs
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');document.getElementById(t.dataset.t).classList.add('on');
+}));
+// Mobile submenu toggle
+document.querySelectorAll('.menu>li>a').forEach(a=>a.addEventListener('click',e=>{
+  if(window.innerWidth<=1100 && a.nextElementSibling){e.preventDefault();a.parentElement.classList.toggle('x');}
+}));
+// Video facade
+document.getElementById('video').addEventListener('click',function(){
+  this.innerHTML='<iframe src="https://www.youtube.com/embed/AkSwAc7ApNc?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen title="MOLCLEAN video"></iframe>';
+},{once:true});
+// Reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
