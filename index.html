@@ -546,6 +546,22 @@ footer a:hover{color:var(--teal-ink)}
 @media (max-width:860px){.pcards{grid-template-columns:1fr 1fr}.pcards .pcard:last-child{grid-column:1/-1;aspect-ratio:16/10}}
 @media (max-width:620px){.pcards{grid-template-columns:1fr;gap:16px}.pcard,.pcards .pcard:last-child{aspect-ratio:4/5;grid-column:auto}.ulink{font-size:15px}}
 
+.hero .wrap>*{min-width:0}
+@media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:380px){
+  .hero h1{font-size:38px}
+  .btn{white-space:normal;text-align:center}
+  .hero .rates .pill{width:100%}
+  .h2{font-size:34px}
+  .prow .pp{font-size:42px}
+  .pcard h3{font-size:28px}
+  .hdr-cta .b-sun{padding:9px 13px;font-size:13px}
+  .logo img{height:28px}
+  .ncs{grid-template-columns:1fr}
+  .ncs .nc:last-child{grid-column:auto}
+  .ncs>*{min-width:0}
+}
+
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.track{animation:none}}
